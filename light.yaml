@@ -1,7 +1,39 @@
 - platform: group
-  name: Luz sofá
+  name: Luzes do sofá da sala
   entities:
     - light.lampada_sofa_1
     - light.lampada_sofa_2
     - light.lampada_sofa_3
     - light.lampada_sofa_4
+
+- platform: group
+  name: Luzes da janela da sala
+  entities:
+    - light.lampada_janela_1
+    - light.lampada_janela_2
+
+- platform: group
+  name: Luzes da TV da sala
+  entities:
+    - light.lampada_tv_1
+    - light.lampada_tv_2
+    - light.lampada_tv_3
+
+- platform: group
+  name: Luzes lateral da TV da
+  entities:
+    - light.lampada_tv_4
+    - light.lampada_tv_5
+
+- platform: group
+  name: Luzes da porta do quintal da sala
+  entities:
+    - light.lampada_quintal_1
+    - light.lampada_quintal_2
+    - light.lampada_quintal_3
+
+- platform: group
+  name: Luzes do quarto
+  entities:
+    - light.abajur
+    - light.abajur_camila

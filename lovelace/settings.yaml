@@ -10,7 +10,7 @@
       name: Porta do quintal
     - entity: binary_sensor.porta_da_frente_acceleration
       name: Vibração
-    - entity: light.luz_sofa
+    - entity: light.luzes_do_sofa_da_sala
       name: Luz da sala
 
 - type: entities
