@@ -12,9 +12,6 @@ http:
 recorder:
   db_url: mysql://homeassistant:Z4vMkyltu@192.168.68.110/homeassistant?charset=utf8
 
-lovelace:
-  mode: yaml
-
 # teste comments do aurelio
 # Text to speech
 tts:
@@ -25,6 +22,7 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 frontend: !include frontend.yaml
+lovelace: !include lovelace.yaml
 
 sensor:
    - platform: template

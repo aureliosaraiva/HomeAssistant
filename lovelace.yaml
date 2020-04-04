@@ -1,0 +1,4 @@
+mode: yaml
+resources:
+  - url: /local/community/mini-media-player/mini-media-player-bundle.js?v=0.0.3
+    type: module

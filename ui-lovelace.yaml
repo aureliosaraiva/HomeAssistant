@@ -1,83 +1,30 @@
 title: Casa da Lara&Mia
 views:
-  - badges: []
-    cards:
-      - entity: media_player.sala_2
-        type: media-control
-      - entity: media_player.gh_mini
-        type: media-control
-      - entities:
-          - light.abajur
-          - light.abajur_camila
-          - light.lampada_janela_1
-          - light.lampada_janela_2
-          - light.lampada_porta
-          - light.lampada_porta_cozinha
-          - light.lampada_quintal_1
-          - light.lampada_quintal_2
-          - light.lampada_quintal_3
-          - light.lampada_sofa_1
-          - light.lampada_sofa_2
-          - light.lampada_sofa_3
-          - light.lampada_sofa_4
-          - light.lampada_tv_1
-          - light.lampada_tv_2
-          - light.lampada_tv_3
-          - light.lampada_tv_4
-          - light.lampada_tv_5
-        title: Luz
-        type: entities
-      - entities:
-          - scene.luces_de_la_tv
-          - scene.luz_de_natal
-          - scene.luz_de_leitura
-          - scene.luz_do_sofa_verde
-          - scene.luz_neutra
-          - scene.luz_noturna
-          - scene.luz_pepitas
-          - scene.romantico
-          - scene.roxo
-          - scene.saindo_de_casa
-          - scene.verde
-        title: Cena
-        type: entities
-      - entities:
-          - switch.virtual_cafeteira
-          - switch.virtual_tv
-          - switch.luz
-        title: Interruptor
-        type: entities
-      - entity: weather.casa_da_lara_mia
-        type: weather-forecast
-    path: default_view
+  - icon: mdi:home-assistant
+    id: home
     title: Home
-  - badges: []
-    cards:
-      - cards:
-        - entities:
-            - entity: sensor.media_player_count
-              icon: mdi:cast
-              name: Multimidia
-            - entity: sensor.tracker_count
-              icon: mdi:cellphone-link
-              name: Número de Devices
-            - entity: sensor.lights_count
-              icon: mdi:lightbulb
-            - entity: sensor.binary_sensor_count
-              icon: mdi:nintendo-switch
-            - entity: sensor.switch_count
-              icon: mdi:toggle-switch
-            - entity: sensor.automation_count
-              icon: mdi:home-assistant
-            - entity: sensor.script_count
-              icon: mdi:script-text-outline
-            - entity: sensor.sensor_count
-              icon: mdi:gauge
-          show_header_toggle: false
-          title: Dispositivos
-          type: entities
-        type: horizontal-stack
-    type: vertical-stack
-    panel: false
-    path: teste
-    title: Teste
+    cards: []
+  - icon: mdi:weather-cloudy
+    id: weather
+    title: Weather
+    cards: []
+  - icon: mdi:chart-line
+    id: grafana
+    title: Grafana
+    cards: []
+  - icon: mdi:camera
+    id: cameras
+    title: Cameras
+    cards: []
+  - icon: mdi:play-circle-outline
+    id: media
+    title: Media
+    cards: !include lovelace/media.yaml
+  - icon: mdi:settings
+    id: settings
+    title: Settings
+    cards: []
+  - icon: mdi:test-tube
+    id: test
+    title: Testing
+    cards: !include lovelace/lab.yaml
