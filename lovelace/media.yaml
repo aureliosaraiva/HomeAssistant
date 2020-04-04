@@ -1,3 +1,15 @@
+- type: entities
+  title: Entreternimento
+  show_header_toggle: false
+  entities:
+    - sensor.living_room
+    - input_select.livingroomharmony
+    - input_select.hdmiswitcher
+    - input_select.hdmiinput
+    - input_number.harmonyvolume
+    - sensor.total_tv_time
+    - sensor.sonos_audio_in
+    - sensor.master_audio_in
 - type: custom:mini-media-player
   entity: media_player.gh_mini
 - type: custom:mini-media-player

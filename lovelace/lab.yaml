@@ -45,27 +45,3 @@
   type: entities
 - entity: weather.casa_da_lara_mia
   type: weather-forecast
-- cards:
-  - entities:
-      - entity: sensor.media_player_count
-        icon: mdi:cast
-        name: Multimidia
-      - entity: sensor.tracker_count
-        icon: mdi:cellphone-link
-        name: Número de Devices
-      - entity: sensor.lights_count
-        icon: mdi:lightbulb
-      - entity: sensor.binary_sensor_count
-        icon: mdi:nintendo-switch
-      - entity: sensor.switch_count
-        icon: mdi:toggle-switch
-      - entity: sensor.automation_count
-        icon: mdi:home-assistant
-      - entity: sensor.script_count
-        icon: mdi:script-text-outline
-      - entity: sensor.sensor_count
-        icon: mdi:gauge
-    show_header_toggle: false
-    title: Dispositivos
-    type: entities
-  type: horizontal-stack

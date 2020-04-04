@@ -1,0 +1,71 @@
+- type: entities
+  title: Sala
+  show_header_toggle: false
+  entities:
+    - entity: sensor.porta_da_frente_temperature_measurement
+      name: Temperatura
+    - entity: binary_sensor.porta_da_frente_contact
+      name: Porta principal
+    - entity: binary_sensor.porta_quintal_contact
+      name: Porta do quintal
+    - entity: binary_sensor.porta_da_frente_acceleration
+      name: Vibração
+
+- type: entities
+  title: Lavanderia
+  show_header_toggle: false
+  entities:
+    - entity: sensor.temperature_lavanderia
+      name: Temperatura
+    - entity: binary_sensor.porta_dos_fundos_contact
+      name: Porta
+    - entity: binary_sensor.porta_dos_fundos_acceleration
+      name: Vibração
+
+- type: entities
+  title: Quarto
+  show_header_toggle: false
+  entities:
+    - entity: sensor.temperatura_quarto
+      name: Temperatura
+    - entity: sensor.temperatura_relative_humidity_quarto
+      name: Humidade
+
+- type: entities
+  title: Bateria
+  show_header_toggle: false
+  entities:
+    - entity: sensor.porta_da_frente_battery
+      name: Sensor porta principal
+    - entity: sensor.porta_dos_fundos_battery
+      name: Sensor porta da lavanderia
+    - entity: sensor.porta_quintal_battery
+      name: Sensor porta do quintal
+    - entity: sensor.temperatura_battery
+      name: Sensor de temperatura do quarto
+    - entity: sensor.motion_sensor_battery
+      name: Sensor de movimento da entrada
+
+
+- type: entities
+  title: Dispositivos
+  show_header_toggle: false
+  entities:
+    - entity: sensor.media_player_count
+      icon: mdi:cast
+      name: Multimidia
+    - entity: sensor.tracker_count
+      icon: mdi:cellphone-link
+      name: Número de Devices
+    - entity: sensor.lights_count
+      icon: mdi:lightbulb
+    - entity: sensor.binary_sensor_count
+      icon: mdi:nintendo-switch
+    - entity: sensor.switch_count
+      icon: mdi:toggle-switch
+    - entity: sensor.automation_count
+      icon: mdi:home-assistant
+    - entity: sensor.script_count
+      icon: mdi:script-text-outline
+    - entity: sensor.sensor_count
+      icon: mdi:gauge

@@ -23,7 +23,7 @@ views:
   - icon: mdi:settings
     id: settings
     title: Settings
-    cards: []
+    cards: !include lovelace/settings.yaml
   - icon: mdi:test-tube
     id: test
     title: Testing
