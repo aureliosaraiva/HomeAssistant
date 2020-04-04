@@ -10,6 +10,8 @@
       name: Porta do quintal
     - entity: binary_sensor.porta_da_frente_acceleration
       name: Vibração
+    - entity: light.luz_sofa
+      name: Luz da sala
 
 - type: entities
   title: Lavanderia

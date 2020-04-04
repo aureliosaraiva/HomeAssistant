@@ -23,51 +23,5 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 frontend: !include frontend.yaml
 lovelace: !include lovelace.yaml
-
-sensor:
-   - platform: template
-     sensors:
-       sensor_count:
-         entity_id: []
-         friendly_name: 'Número de Sensores'
-         value_template: '{{ states.sensor | count }}'
-
-       automation_count:
-         entity_id: []
-         friendly_name: 'Número de Automações'
-         value_template: '{{ states.automation | count }}'
-
-       script_count:
-         entity_id: []
-         friendly_name: 'Número de Scripts'
-         value_template: '{{ states.script | count }}'
-
-       switch_count:
-         entity_id: []
-         friendly_name: 'Número de Switches'
-         value_template: '{{ states.switch | count }}'
-
-       binary_sensor_count:
-         entity_id: []
-         friendly_name: 'Número de Sensor Binário'
-         value_template: '{{ states.binary_sensor | count }}'
-
-       lights_count:
-         entity_id: []
-         friendly_name: 'Número de Luzes'
-         value_template: '{{ states.light | count }}'
-
-       tracker_count:
-         entity_id: []
-         friendly_name: 'Número de Devices'
-         value_template: '{{ states.device_tracker | count }}'
-
-       zwave_count:
-         entity_id: []
-         friendly_name: 'Zwave Devices'
-         value_template: '{{ states.zwave_count | count }}'
-
-       media_player_count:
-         entity_id: []
-         friendly_name: 'Multimidia'
-         value_template: '{{ states.media_player | count }}'
+light: !include light.yaml
+sensor: !include sensor.yaml

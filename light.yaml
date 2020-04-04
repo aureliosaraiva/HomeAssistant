@@ -1,0 +1,7 @@
+- platform: group
+  name: Luz sofá
+  entities:
+    - light.lampada_sofa_1
+    - light.lampada_sofa_2
+    - light.lampada_sofa_3
+    - light.lampada_sofa_4
