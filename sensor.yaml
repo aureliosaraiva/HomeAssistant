@@ -50,3 +50,27 @@
       entity_id: []
       friendly_name: 'Multimidia'
       value_template: '{{ states.media_player | count }}'
+
+    presence_home:
+      friendly_name: Tem alguém em casa
+      entity_id:
+        - binary_sensor.aurelio_saraiva_s_galaxy_a8_2018_presence
+        - binary_sensor.camila_medrosa_ferreira_s_galaxy_s9_presence
+      value_template: >-
+        {% if is_state('binary_sensor.camila_medrosa_ferreira_s_galaxy_s9_presence', 'on')
+           or is_state('binary_sensor.aurelio_saraiva_s_galaxy_a8_2018_presence', 'on') %}
+           Sim
+        {% else %}
+           Não
+        {% endif %}
+    average_house_temp:
+      friendly_name: 'Temperatura média da casa'
+      unit_of_measurement: "°C"
+      value_template: >-
+        {{
+          float(
+          float(states.sensor.temperatura_quarto.state) +
+          float(states.sensor.temperature_lavanderia.state) +
+          float(states.sensor.porta_da_frente_temperature_measurement.state)
+          ) / 3 | round(1)
+        }}

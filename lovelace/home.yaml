@@ -1,0 +1,174 @@
+- type: picture-elements
+  image: /local/floorplans/main.jpg
+  elements:
+    - type: state-icon
+      entity: light.lampada_janela_2
+      style:
+        top: 18%
+        left: 51%
+
+    - type: state-icon
+      entity: light.lampada_janela_1
+      style:
+        top: 18%
+        left: 76%
+
+    - type: state-icon
+      entity: light.lampada_porta
+      style:
+        top: 18%
+        left: 90%
+
+    - type: state-icon
+      entity: light.lampada_tv_1
+      style:
+        top: 22%
+        left: 95%
+
+    - type: state-icon
+      entity: light.lampada_tv_2
+      style:
+        top: 31%
+        left: 95%
+
+    - type: state-icon
+      entity: light.lampada_tv_3
+      style:
+        top: 41%
+        left: 95%
+
+    - type: state-icon
+      entity: light.lampada_tv_4
+      style:
+        top: 43%
+        left: 90%
+
+    - type: state-icon
+      entity: light.lampada_tv_5
+      style:
+        top: 43%
+        left: 76%
+
+    - type: state-icon
+      entity: light.lampada_quintal_1
+      style:
+        top: 25%
+        left: 37%
+
+    - type: state-icon
+      entity: light.lampada_quintal_2
+      style:
+        top: 33%
+        left: 37%
+
+    - type: state-icon
+      entity: light.lampada_quintal_3
+      style:
+        top: 41%
+        left: 37%
+
+    - type: state-icon
+      entity: light.lampada_sofa_1
+      style:
+        top: 52%
+        left: 57%
+
+    - type: state-icon
+      entity: light.lampada_sofa_2
+      style:
+        top: 52%
+        left: 42%
+
+    - type: state-icon
+      entity: light.lampada_sofa_3
+      style:
+        top: 59%
+        left: 57%
+
+    - type: state-icon
+      entity: light.lampada_sofa_4
+      style:
+        top: 59%
+        left: 42%
+
+    - type: state-icon
+      entity: light.lampada_porta_cozinha
+      style:
+        top: 63%
+        left: 70%
+
+    - type: state-label
+      entity: sensor.sensor_de_movimento_da_entrada_temperature_measurement
+      style:
+        top: 10%
+        left: 90%
+        color: "#FFF"
+        border-radius: 50%
+        text-align: center
+        background-color: "rgba(0, 0, 0, 0.3)"
+        font-size: 11px
+        font-weight: bold
+
+    - type: state-icon
+      entity: binary_sensor.sensor_de_movimento_da_entrada_motion
+      style:
+        top: 5%
+        left: 90%
+
+    - type: state-label
+      entity: sensor.porta_da_frente_temperature_measurement
+      style:
+        top: 31%
+        left: 87%
+        color: "#000"
+        border-radius: 50%
+        text-align: center
+        background-color: "rgba(255, 255, 255, 0.3)"
+        font-size: 11px
+        font-weight: bold
+
+    - type: state-label
+      entity: sensor.temperature_lavanderia
+      style:
+        top: 86%
+        left: 57%
+        color: "#000"
+        border-radius: 50%
+        text-align: center
+        background-color: "rgba(255, 255, 255, 0.3)"
+        font-size: 11px
+        font-weight: bold
+
+    - type: state-label
+      entity: sensor.sensor_de_movimento_cozinha_temperature_measurement
+      style:
+        top: 80%
+        left: 87%
+        color: "#000"
+        border-radius: 50%
+        text-align: center
+        background-color: "rgba(255, 255, 255, 0.3)"
+        font-size: 11px
+        font-weight: bold
+
+    - type: state-icon
+      entity: binary_sensor.sensor_de_movimento_quintal_motion_2
+      style:
+        top: 40%
+        left: 20%
+
+    - type: state-icon
+      entity: binary_sensor.sensor_de_movimento_cozinha_motion
+      style:
+        top: 80%
+        left: 75%
+
+    - type: state-icon
+      entity: switch.luzes_da_churrasqueira
+      icon: mdi:lightbulb-on
+      style:
+        top: 90%
+        left: 10%
+
+- entity: weather.casa_da_lara_mia
+  type: weather-forecast

@@ -43,5 +43,7 @@
     - switch.luz
   title: Interruptor
   type: entities
-- entity: weather.casa_da_lara_mia
-  type: weather-forecast
+- entities:
+    - sensor.presence_home
+  title: Teste
+  type: entities

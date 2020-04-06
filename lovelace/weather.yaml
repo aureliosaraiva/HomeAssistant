@@ -1,0 +1,24 @@
+- entity: weather.casa_da_lara_mia
+  type: weather-forecast
+
+- type: entities
+  title: Temperatura e Humidade
+  show_header_toggle: false
+  entities:
+    - entity: sensor.average_house_temp
+      name: Temperatura média
+    - type: divider
+    - entity: sensor.porta_da_frente_temperature_measurement
+      name: Temperatura da sala
+    - entity: sensor.temperature_lavanderia
+      name: Temperatura da lavanderia
+    - entity: sensor.temperatura_quarto
+      name: Temperatura do quarto
+    - entity: sensor.temperatura_relative_humidity_quarto
+      name: Humidade do quarto
+    - entity: sensor.sensor_de_movimento_quintal_temperature_measurement_2
+      name: Temperatura externa no quintal
+    - entity: sensor.sensor_de_movimento_cozinha_temperature_measurement
+      name: Temperatura da cozinha
+    - entity: sensor.sensor_de_movimento_da_entrada_temperature_measurement
+      name: Temperatura externa na entrada

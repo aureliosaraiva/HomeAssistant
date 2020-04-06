@@ -41,12 +41,20 @@
       name: Sensor porta principal
     - entity: sensor.porta_dos_fundos_battery
       name: Sensor porta da lavanderia
-    - entity: sensor.porta_quintal_battery
+    - entity: sensor.porta_quintal_battery_3
       name: Sensor porta do quintal
     - entity: sensor.temperatura_battery
       name: Sensor de temperatura do quarto
-    - entity: sensor.motion_sensor_battery
+    - entity: sensor.sensor_de_movimento_da_entrada_battery
       name: Sensor de movimento da entrada
+    - entity: sensor.porta_do_banheiro_battery
+      name: Sensor porta banheiro da social
+    - entity: sensor.porta_cozinha_battery
+      name: Sensor porta da cozinha
+    - entity: sensor.sensor_de_movimento_quintal_battery_2
+      name: Sendor de movimento do quintal
+    - entity: sensor.sensor_de_movimento_cozinha_battery
+      name: Sensor de movimento da cozinha
 
 
 - type: entities

@@ -3,11 +3,11 @@ views:
   - icon: mdi:home-assistant
     id: home
     title: Home
-    cards: []
+    cards: !include lovelace/home.yaml
   - icon: mdi:weather-cloudy
     id: weather
     title: Weather
-    cards: []
+    cards: !include lovelace/weather.yaml
   - icon: mdi:chart-line
     id: grafana
     title: Grafana
