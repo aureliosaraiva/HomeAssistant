@@ -2,14 +2,15 @@
   title: Entreternimento
   show_header_toggle: false
   entities:
-    - sensor.living_room
-    - input_select.livingroomharmony
-    - input_select.hdmiswitcher
-    - input_select.hdmiinput
-    - input_number.harmonyvolume
-    - sensor.total_tv_time
-    - sensor.sonos_audio_in
-    - sensor.master_audio_in
+    - sensor.tv_living_room
+    - switch.tv_living_room
+    - entity: scene.light_movies
+      name: Luzes ambiente (Filmes)
+
+- type: custom:mini-media-player
+  entity: media_player.cast_living_room
+  artwork: cover
+
 - type: custom:mini-media-player
   entity: media_player.gh_mini
 - type: custom:mini-media-player

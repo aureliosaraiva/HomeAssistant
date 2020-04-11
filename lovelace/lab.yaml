@@ -45,5 +45,6 @@
   type: entities
 - entities:
     - sensor.presence_home
+    - switch.tv_phillips
   title: Teste
   type: entities

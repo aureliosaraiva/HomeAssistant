@@ -1,1 +1,107 @@
-[]
+- id: 'luz_filme'
+  alias: Ajusta luz quando iniciar filme
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id:  sensor.tv_living_room_movie
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: time
+      after: '17:00:00'
+      before: '05:00:00'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.light_movies
+    - service: notify.NOTIFIER_NAME
+      data:
+        title: '*Send a message*'
+        message: "Teste"
+
+- id: 'luz_porta_de_entrada'
+  alias: Acende a luz da porta quando abre
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.porta_da_frente_contact
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: light.lampada_porta
+      state: 'off'
+    - condition: time
+      after: '18:00:00'
+      before: '05:00:00'
+  action:
+    - service: light.turn_on
+      data_template:
+        brightness: 30
+        entity_id: light.lampada_porta
+
+- id: 'apagar_luz_churrasqueira'
+  alias: Apagar luz da churrasqueira
+  description: Apagar luz quando fechar as portas para o quintal
+  trigger:
+    - platform: state
+      entity_id:
+        - binary_sensor.porta_dos_fundos_contact
+        - binary_sensor.porta_quintal_contact
+      from: 'on'
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: binary_sensor.porta_dos_fundos_contact
+      state: 'off'
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: binary_sensor.porta_quintal_contact
+          state: 'off'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.luzes_da_churrasqueira
+
+- id: 'acende_luz_com_movimento_quintal'
+  alias: 'Acende a luz da churrasqueira quando tiver movimento'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.sensor_de_movimento_quintal_motion
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: time
+      after: '18:00:00'
+      before: '03:00:00'
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: binary_sensor.porta_quintal_contact
+          state: 'on'
+        - condition: or
+          conditions:
+            - condition: state
+              entity_id: binary_sensor.porta_dos_fundos_contact
+              state: 'on'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.luzes_da_churrasqueira
+
+- id: 'luzes_sala_anoitecer'
+  alias: Acende as luzes ao por do sol
+  description: Acende as luzes
+  trigger:
+    - event: sunset
+      platform: sun
+  condition:
+    - condition: time
+      after: '17:40:00'
+      before: '18:30:00'
+  action:
+  - service: light.turn_on
+    data_template:
+      brightness: 20
+      entity_id:
+        - light.lampada_porta
+        - light.lampada_porta_cozinha
+        - light.lampada_quintal_2

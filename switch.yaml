@@ -1,0 +1,10 @@
+- platform: broadlink
+  host: !secret broadlink_host
+  mac: !secret broadlink_mac
+  timeout: 15
+  retry: 5
+  switches:
+    tv_living_room:
+      friendly_name: Televisão da sala
+      command_on: 'JgCEAFYfDxwQDg8OEBweDhAODw4QDg8OEA4PDg4QDw4PDw8ODw4dDxAcEA4PAAqwWBwQHBAODw4QHB4OEA4PDhAODw4QDg8ODhAPDg8ODhAPDh0PEBwOEA8ACrBYHA4eEA4PDhAcHQ8QDg8OEA4PDhAODw4QDg8ODw4QDg4PHQ8OHg4QDwANBQAAAAA='
+      command_off: 'JgCEAFYfDxwQDg8OEBweDhAODw4QDg8OEA4PDg4QDw4PDw8ODw4dDxAcEA4PAAqwWBwQHBAODw4QHB4OEA4PDhAODw4QDg8ODhAPDg8ODhAPDh0PEBwOEA8ACrBYHA4eEA4PDhAcHQ8QDg8OEA4PDhAODw4QDg8ODw4QDg4PHQ8OHg4QDwANBQAAAAA='

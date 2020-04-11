@@ -7,3 +7,7 @@ home-assistant_v2.db
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
+google_assistant.json
+tts
+.DS_Store
+._.DS_Store

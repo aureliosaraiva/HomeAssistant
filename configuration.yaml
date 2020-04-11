@@ -3,19 +3,39 @@
 default_config:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-http:
-  base_url: https://aureliosaraiva.duckdns.org:9877
+#http:
+#  base_url: !secret http_url
 #  ssl_certificate: /config/ssl/fullchain.pem
 #  ssl_key: /config/ssl/privkey.pem
 
 
 recorder:
-  db_url: mysql://homeassistant:Z4vMkyltu@192.168.68.110/homeassistant?charset=utf8
+  db_url: !secret mysql_host
 
 # teste comments do aurelio
 # Text to speech
 tts:
   - platform: google_translate
+
+homeassistant:
+  customize: !include customize.yaml
+  customize_glob: !include customize_glob.yaml
+
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_key
+    allowed_chat_ids:
+      - 611383381
+
+notify:
+  - name: NOTIFIER_NAME
+    platform: telegram
+    chat_id: 611383381
+
+tuya:
+  username: !secret tuya_username
+  password: !secret tuya_password
+  country_code: 55
 
 group: !include groups.yaml
 automation: !include automations.yaml
@@ -25,3 +45,4 @@ frontend: !include frontend.yaml
 lovelace: !include lovelace.yaml
 light: !include light.yaml
 sensor: !include sensor.yaml
+switch: !include switch.yaml

@@ -1,0 +1,28 @@
+- name: light_movies
+  icon: mdi:lightbulb-on
+  entities:
+    light.lampada_sofa_1: off
+    light.lampada_sofa_2: off
+    light.lampada_sofa_3: off
+    light.lampada_sofa_4: off
+    light.lampada_janela_1: off
+    light.lampada_janela_2: off
+    light.lampada_tv_4: off
+    light.lampada_tv_5: off
+    light.lampada_quintal_1: off
+    light.lampada_quintal_2: off
+    light.lampada_quintal_3: off
+    light.lampada_porta_cozinha: off
+    light.lampada_porta: off
+    light.lampada_tv_1:
+      state: on
+      brightness: 30
+      color_temp: 369
+    light.lampada_tv_2:
+      state: on
+      brightness: 30
+      color_temp: 369
+    light.lampada_tv_3:
+      state: on
+      brightness: 30
+      color_temp: 369
