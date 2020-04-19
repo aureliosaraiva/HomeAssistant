@@ -1,0 +1,20 @@
+- id: turn_on_the_ligth_when_front_door_open_the_nigth
+  alias: turn_on_the_ligth_when_front_door_open_the_nigth
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.porta_da_frente_contact
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: light.lampada_porta
+      state: 'off'
+    - condition: time
+      after: '17:00:00'
+      before: '05:00:00'
+  action:
+    - service: light.turn_on
+      data_template:
+        brightness: 30
+        entity_id: light.lampada_porta

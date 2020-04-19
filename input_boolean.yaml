@@ -1,0 +1,4 @@
+- vacuum:
+    name: Robo de limpeza
+    icon: mdi:robot
+    initial: off

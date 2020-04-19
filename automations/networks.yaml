@@ -1,0 +1,21 @@
+- id: network_new_device_detected
+  alias: network_new_device_detected
+  trigger:
+  - event_data:
+      action: network_new_device
+    event_type: ifttt_webhook_received
+    platform: event
+  condition: []
+  action:
+    - service: notify.alexa_media
+      data:
+        target:
+          - media_player.echo_dot_de_aurelio
+        data:
+          type: announce
+        message: >
+           {{ [
+            "Foi detectado um novo dispositivo na rede.",
+            "Detectei um novo dispositivo.",
+            "Novo dispositivo detectado e configurado."
+            ] | random }}

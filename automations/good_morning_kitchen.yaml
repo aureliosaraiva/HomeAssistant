@@ -1,0 +1,22 @@
+- id: good_moring_kitchen
+  alias: Morning
+  trigger:
+    - entity_id: binary_sensor.sensor_de_movimento_cozinha_motion
+      platform: state
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: template
+        value_template: '{{ (as_timestamp(now()) - as_timestamp(states.automation.morning.attributes.last_triggered | default(0)) | int > 3600)}}'
+  action:
+    - service: notify.alexa_media
+      data:
+        target:
+          - media_player.echo_dot_de_aurelio
+        data:
+          type: announce
+        message: >
+           {{ [
+            "Bom dia"
+            ] | random }}

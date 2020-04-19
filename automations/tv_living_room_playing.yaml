@@ -1,0 +1,49 @@
+- id: 'active_scene_when_tv_living_room_is_modo_movie'
+  alias: Ajusta as luzes quando a televisão entrar no modo filme
+  trigger:
+    - platform: state
+      entity_id:  sensor.tv_living_room_movie
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: time
+      after: '17:00:00'
+      before: '05:00:00'
+  action:
+    - service: notify.alexa_media
+      data:
+        target:
+          - media_player.echo_dot_de_aurelio
+        data:
+          type: announce
+        message: >
+         {{ [
+          "Modo filme ativado. Vou ajustar as luzes.",
+          "Vou diminuir o brilho das luzes. Aproveite o filme.",
+          "Estou colocando a sala em modo filme.",
+          "Estou habilitando o modo filme.",
+          "Vou ajustar as luzes para assitir o filme mais confortável."
+          ] | random }}
+    - delay: '5'
+    - service: scene.turn_on
+      entity_id: scene.light_movie_enable
+    - service: automation.turn_on
+      entity_id: automation.ajusta_as_luzes_quando_televisao_sair_do_modo_filme
+
+- id: 'active_scene_when_tv_living_room_is_not_modo_movie'
+  alias: Ajusta as luzes quando televisão sair do modo filme
+  initial_state: 'off'
+  trigger:
+    - platform: state
+      entity_id:  sensor.tv_living_room_movie
+      from: 'on'
+      to: 'off'
+  condition:
+    - condition: time
+      after: '17:00:00'
+      before: '05:00:00'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.light_movie_disable
+    - service: automation.turn_off
+      entity_id: automation.ajusta_as_luzes_quando_televisao_sair_do_modo_filme

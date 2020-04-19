@@ -46,5 +46,6 @@
 - entities:
     - sensor.presence_home
     - switch.tv_phillips
+    - input_boolean.vacuum
   title: Teste
   type: entities

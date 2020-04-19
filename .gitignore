@@ -11,3 +11,4 @@ google_assistant.json
 tts
 .DS_Store
 ._.DS_Store
+*.pickle

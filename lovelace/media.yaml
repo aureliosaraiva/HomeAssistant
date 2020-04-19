@@ -15,3 +15,7 @@
   entity: media_player.gh_mini
 - type: custom:mini-media-player
   entity: media_player.gh_view
+
+- type: custom:mini-media-player
+  entity: media_player.amazon_fire_tv
+  artwork: cover

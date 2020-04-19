@@ -1,4 +1,36 @@
-- name: light_movies
+- name: light_movie_disable
+  icon: mdi:lightbulb-on
+  entities:
+    light.lampada_sofa_1: off
+    light.lampada_sofa_2: off
+    light.lampada_sofa_3: off
+    light.lampada_sofa_4: off
+    light.lampada_janela_1: off
+    light.lampada_janela_2: off
+    light.lampada_tv_4: off
+    light.lampada_tv_5: off
+    light.lampada_quintal_1: off
+    light.lampada_quintal_2: off
+    light.lampada_quintal_3: off
+    light.lampada_porta: off
+    light.lampada_tv_1:
+      state: on
+      brightness: 50
+      color_temp: 369
+    light.lampada_tv_2:
+      state: on
+      brightness: 50
+      color_temp: 369
+    light.lampada_tv_3:
+      state: on
+      brightness: 50
+      color_temp: 369
+    light.lampada_porta_cozinha:
+      state: on
+      brightness: 50
+      color_temp: 369
+
+- name: light_movie_enable
   icon: mdi:lightbulb-on
   entities:
     light.lampada_sofa_1: off
@@ -23,6 +55,38 @@
       brightness: 30
       color_temp: 369
     light.lampada_tv_3:
+      state: on
+      brightness: 30
+      color_temp: 369
+
+- name: light_sun_set
+  icon: mdi:lightbulb-on
+  entities:
+    light.lampada_sofa_1: off
+    light.lampada_sofa_2: off
+    light.lampada_sofa_3: off
+    light.lampada_sofa_4: off
+    light.lampada_tv_4: off
+    light.lampada_tv_5: off
+    light.lampada_quintal_1: off
+    light.lampada_quintal_3: off
+    light.lampada_porta: off
+    light.lampada_tv_1: off
+    light.lampada_tv_2: off
+    light.lampada_tv_3: off
+    light.lampada_porta_cozinha:
+      state: on
+      brightness: 30
+      color_temp: 369
+    light.lampada_janela_1:
+      state: on
+      brightness: 30
+      color_temp: 369
+    light.lampada_janela_2:
+      state: on
+      brightness: 30
+      color_temp: 369
+    light.lampada_quintal_2:
       state: on
       brightness: 30
       color_temp: 369
