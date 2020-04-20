@@ -1,0 +1,15 @@
+- id: going_to_sleep
+  alias: going_to_sleep
+  trigger:
+  - event_data:
+      action: alexa_command_going_to_sleep
+    event_type: ifttt_webhook_received
+    platform: event
+  condition:
+    - condition: time
+      after: '02:00:00'
+      before: '20:00:00'
+  action:
+    - delay: 60
+    - service: scenes.turn_on
+      entity_id: scenes.turn_off_the_ligth_going_sleep

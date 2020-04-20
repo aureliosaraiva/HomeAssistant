@@ -1,4 +1,10 @@
-- vacuum:
-    name: Robo de limpeza
-    icon: mdi:robot
-    initial: off
+vacuum:
+  name: Robo de limpeza
+  icon: mdi:robot
+  initial: off
+guest_mode:
+  name: Modo Guest
+  initial: on
+speech_notifications:
+  name: Notificações sonoras
+  initial: on
