@@ -1,3 +1,7 @@
+zigbee_permit_join:
+  name: Permitir novos devices
+  initial: off
+  icon: mdi:cellphone-wireless
 vacuum:
   name: Robo de limpeza
   icon: mdi:robot

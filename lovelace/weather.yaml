@@ -5,20 +5,13 @@
   title: Temperatura e Humidade
   show_header_toggle: false
   entities:
-    - entity: sensor.average_house_temp
-      name: Temperatura média
-    - type: divider
-    - entity: sensor.porta_da_frente_temperature_measurement
-      name: Temperatura da sala
-    - entity: sensor.temperature_lavanderia
-      name: Temperatura da lavanderia
-    - entity: sensor.temperatura_quarto
+    - entity: sensor.temperature_bedroom_temperature
       name: Temperatura do quarto
-    - entity: sensor.temperatura_relative_humidity_quarto
+    - entity: sensor.temperature_bedroom_humidity
       name: Humidade do quarto
-    - entity: sensor.sensor_de_movimento_quintal_temperature_measurement_2
-      name: Temperatura externa no quintal
-    - entity: sensor.sensor_de_movimento_cozinha_temperature_measurement
+    - entity: sensor.temperature_bedroom_pressure
+      name: Pressão do quarto
+    - entity: sensor.motion_external_door_temperature
+      name: Temperatura externa
+    - entity: sensor.0x286d97000107b88c_temperature
       name: Temperatura da cozinha
-    - entity: sensor.sensor_de_movimento_da_entrada_temperature_measurement
-      name: Temperatura externa na entrada

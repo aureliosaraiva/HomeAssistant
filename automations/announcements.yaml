@@ -1,0 +1,45 @@
+- alias: when_someone_comes_home
+
+  trigger:
+    - platform: state
+      entity_id:
+        - device_tracker.life360_aurelio_saraiva
+      from: 'not_home'
+      to: 'home'
+      for: '00:02:00'
+
+  action:
+    - wait_template: >-
+        {{ states.binary_sensor.door_living_room_contact.state == 'on' }}
+    - service: script.speech_engine
+      data_template:
+        media_player: media_player.echo_de_aurelio
+        custom_message: >
+          {% set person = state_attr(trigger.entity_id, "friendly_name")%}
+          {%- macro greeting_sentence(person) -%}
+          {{ [
+            "Adivinha quem está em casa? " ~ person + "!",
+            person + " está em casa agora.",
+            "Bem-vindo a casa " ~ person + ". Sentimos sua falta. Ou pelo menos a Lara e a Mia sentiram.",
+            "Nossa casa agora está completa, descanse a cabeça e relaxe os pés! Bem-vindo de volta " ~ person,
+            "A vida é como uma música, você voltou para onde pertence. Bem-vindo a casa " ~ person,
+            "Toc-Toc. Quem está aí? " ~ person + "!",
+            "O sensor da porta principal acabou de me dizer que " ~ person + " está em casa.",
+            person + " não pode se esconder do sistema. Bem-vindo a casa.",
+            person ~ "! Você está em casa!",
+            "Eu sei um segredo! " ~ person + "está em casa!",
+            "Oi " ~ person + ". Sua chegada foi registrada pela casa mais inteligente do condomínio.",
+            "Estou sentindo uma perturbação na força. " ~ person + " deve estar em casa!",
+            "E a casa se torna um lar. Bem-vindo de volta " ~ person,
+            person + " chegou. Hash tag Bem-vindo a casa.",
+            person + " chegou. Hash tag casa.",
+            person + " chegou. Hash tag casa inteligente.",
+            "Apenas um anúncio rápido. " ~ person + " chegou!",
+            "Perdoe a interrupção, mas " ~ person + " está em casa!",
+            "Meus sistemas estão percebendo a presença de humanos adicionais. " ~ person + " foi identificado como lar.",
+            "Bem-vindo a casa " ~ person ~ "! É bom vê-lo novamente! Deixe-me acender as luzes.",
+            "Parece que " ~ person ~ " está finalmente em casa! Vou preparar a casa para você."
+          ] | random }}
+          {%- endmacro -%}
+          {{greeting_sentence(person)}}
+        call_no_announcement: 1

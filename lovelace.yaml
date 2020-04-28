@@ -2,3 +2,5 @@ mode: yaml
 resources:
   - url: /local/community/mini-media-player/mini-media-player-bundle.js?v=1.7.0
     type: module
+  - url: /local/community/mini-graph-card/mini-graph-card-bundle.js?v=0.9.3
+    type: module

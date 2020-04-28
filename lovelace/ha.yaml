@@ -1,0 +1,77 @@
+- type: entities
+  title: Dispositivos
+  show_header_toggle: false
+  entities:
+    - entity: sensor.media_player_count
+      icon: mdi:cast
+      name: Multimidia
+    - entity: sensor.tracker_count
+      icon: mdi:cellphone-link
+      name: Número de Devices
+    - entity: sensor.lights_count
+      icon: mdi:lightbulb
+    - entity: sensor.binary_sensor_count
+      icon: mdi:nintendo-switch
+    - entity: sensor.switch_count
+      icon: mdi:toggle-switch
+    - entity: sensor.automation_count
+      icon: mdi:home-assistant
+    - entity: sensor.script_count
+      icon: mdi:script-text-outline
+    - entity: sensor.sensor_count
+      icon: mdi:gauge
+- type: entities
+  entities:
+    - entity: input_boolean.zigbee_permit_join
+    - entity: timer.zigbee_permit_join
+    - entity: sensor.bridge_state
+  show_header_toggle: false
+  title: Zigbee
+- type: entities
+  title: Bateria
+  show_header_toggle: false
+  entities:
+    - entity: sensor.contact_door_kitchen_battery
+    - entity: sensor.contact_living_room_garden_battery
+    - entity: sensor.door_bathroom_battery
+    - entity: sensor.door_living_room_battery
+    - entity: sensor.motion_external_door_battery
+    - entity: sensor.motion_garden_battery
+    - entity: sensor.motion_kitchen_battery
+    - entity: sensor.moton_living_room_battery
+    - entity: sensor.temperature_bedroom_battery
+    - entity: sensor.sm_a530f_battery_level
+- type: horizontal-stack
+  cards:
+  - type: sensor
+    name: CPU Temperature
+    icon: mdi:memory
+    entity: sensor.cpu_temperature
+    hours_to_show: 24
+    graph: line
+    detail: 1
+    theme: midnightclear
+  - type: sensor
+    name: Disk use
+    icon: mdi:harddisk
+    entity: sensor.disk_use_percent_home
+    hours_to_show: 24
+    graph: line
+    detail: 1
+    theme: midnightclear
+- type: horizontal-stack
+  cards:
+    - type: sensor
+      entity: sensor.processor_use
+      name: Processor
+      hours_to_show: 24
+      graph: line
+      detail: 1
+      theme: midnightclear
+    - type: sensor
+      entity: sensor.memory_use_percent
+      name: Memory
+      hours_to_show: 24
+      graph: line
+      detail: 1
+      theme: midnightclear

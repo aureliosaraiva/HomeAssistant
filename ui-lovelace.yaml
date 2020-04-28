@@ -8,14 +8,6 @@ views:
     id: weather
     title: Weather
     cards: !include lovelace/weather.yaml
-  - icon: mdi:chart-line
-    id: grafana
-    title: Grafana
-    cards: []
-  - icon: mdi:camera
-    id: cameras
-    title: Cameras
-    cards: []
   - icon: mdi:play-circle-outline
     id: media
     title: Media
@@ -24,6 +16,10 @@ views:
     id: settings
     title: Settings
     cards: !include lovelace/settings.yaml
+  - icon: mdi:information-variant
+    id: information-variant
+    title: HA
+    cards: !include lovelace/ha.yaml
   - icon: mdi:test-tube
     id: test
     title: Testing

@@ -1,3 +1,34 @@
+# - platform: mqtt
+#   name: Zigbee2mqtt Networkmap
+#   state_topic: zigbee2mqtt/bridge/networkmap/raw
+#   value_template: >-
+#     {{ now().strftime('%Y-%m-%d %H:%M:%S') }}
+#   json_attributes_topic: zigbee2mqtt/bridge/networkmap/raw
+
+#https://home-assistant.io/components/sensor.systemmonitor/
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /home
+    - type: memory_use_percent
+    - type: processor_use
+    - type: last_boot
+
+#https://www.home-assistant.io/components/sensor.command_line/
+- platform: command_line
+  name: CPU Temperature
+  command: "cat /sys/class/thermal/thermal_zone2/temp"
+  unit_of_measurement: "°C"
+  value_template: '{{ value | multiply(0.001) | round(1) }}'
+
+#https://www.home-assistant.io/integrations/uptime/
+- platform: uptime
+  name: Time Online
+  unit_of_measurement: hours
+- platform: mqtt
+  name: Bridge state
+  state_topic: "zigbee2mqtt/bridge/state"
+  icon: mdi:router-wireless
 - platform: template
   sensors:
     tv_living_room_movie:
@@ -94,3 +125,4 @@
           float(states.sensor.porta_da_frente_temperature_measurement.state)
           ) / 3 | round(1)
         }}
+- platform: moon

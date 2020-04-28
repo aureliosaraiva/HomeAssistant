@@ -9,16 +9,12 @@
     - service: notify.AURELIO
       data:
         message: 'There is a new Home Assistant release available.'
-    - service: notify.alexa_media
-      data:
-        target:
-          - media_player.echo_dot_de_aurelio
-        data:
-          type: announce
-        message: >
-           {{ [
-            "Meus criadores informaram que existe atualizações para minha programação.",
-            "Tenho uma nova atualização para meu sistema.",
-            "Uma nova atualização foi disponibilizada para meu sistema.",
-            "Recebi o aviso que tenho uma nova atualização."
-            ] | random }}
+    - service: script.speech_engine
+      data_template:
+        custom_message: >
+          {{ [
+           "Meus criadores informaram que existe atualizações para minha programação.",
+           "Tenho uma nova atualização para meu sistema.",
+           "Uma nova atualização foi disponibilizada para meu sistema.",
+           "Recebi o aviso que tenho uma nova atualização."
+           ] | random }}

@@ -1,39 +1,39 @@
 - platform: group
-  name: Luzes do sofá da sala
+  name: lamps_living_room_sofa
   entities:
-    - light.lampada_sofa_1
-    - light.lampada_sofa_2
-    - light.lampada_sofa_3
-    - light.lampada_sofa_4
+    - light.lamp_living_room_sofa_1_light
+    - light.lamp_living_room_sofa_2_light
+    - light.lamp_living_room_sofa_3_light
+    - light.lamp_living_room_sofa_4_light
 
 - platform: group
-  name: Luzes da janela da sala
+  name: lamps_living_room_window
   entities:
-    - light.lampada_janela_1
-    - light.lampada_janela_2
+    - light.lamp_living_room_window_1_light
+    - light.lamp_living_room_window_2_light
 
 - platform: group
-  name: Luzes da TV da sala
+  name: lamps_living_room_tv
   entities:
-    - light.lampada_tv_1
-    - light.lampada_tv_2
-    - light.lampada_tv_3
+    - light.lamp_living_room_tv_1_light
+    - light.lamp_living_room_tv_2_light
+    - light.lamp_living_room_tv_3_light
 
 - platform: group
-  name: Luzes lateral da TV da
+  name: lamps_living_room_tv_side
   entities:
-    - light.lampada_tv_4
-    - light.lampada_tv_5
+    - light.lamp_living_room_tv_4_light
+    - light.lamp_living_room_tv_5_light
 
 - platform: group
-  name: Luzes da porta do quintal da sala
+  name: lamps_living_room_garden
   entities:
-    - light.lampada_quintal_1
-    - light.lampada_quintal_2
-    - light.lampada_quintal_3
+    - light.lamp_living_room_garden_1_light
+    - light.lamp_living_room_garden_2_light
+    - light.lamp_living_room_garden_3_light
 
 - platform: group
-  name: Luzes do quarto
+  name: lamps_bedroom
   entities:
-    - light.abajur
-    - light.abajur_camila
+    - light.lamp_bedroom_left_light
+    - light.lamp_bedroom_right_light

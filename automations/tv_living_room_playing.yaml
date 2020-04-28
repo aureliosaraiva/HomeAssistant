@@ -10,21 +10,18 @@
       after: '17:00:00'
       before: '05:00:00'
   action:
-    - service: notify.alexa_media
-      data:
-        target:
-          - media_player.echo_dot_de_aurelio
-        data:
-          type: announce
-        message: >
-         {{ [
-          "Modo filme ativado. Vou ajustar as luzes.",
-          "Vou diminuir o brilho das luzes. Aproveite o filme.",
-          "Estou colocando a sala em modo filme.",
-          "Estou habilitando o modo filme.",
-          "Vou ajustar as luzes para assitir o filme mais confortável."
-          ] | random }}
-    - delay: '5'
+    - service: script.speech_engine
+      data_template:
+        custom_message: >
+          {{ [
+           "Modo filme ativado. Vou ajustar as luzes.",
+           "Vou diminuir o brilho das luzes. Aproveite o filme.",
+           "Estou colocando a sala em modo filme.",
+           "Estou habilitando o modo filme.",
+           "Vou ajustar as luzes para assitir o filme mais confortável."
+           ] | random }}
+        call_no_announcement: 1
+    - delay: 1
     - service: scene.turn_on
       entity_id: scene.light_movie_enable
     - service: automation.turn_on

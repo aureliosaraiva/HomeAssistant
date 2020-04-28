@@ -2,24 +2,61 @@
   title: Sala
   show_header_toggle: false
   entities:
-    - entity: sensor.porta_da_frente_temperature_measurement
-      name: Temperatura
-    - entity: binary_sensor.porta_da_frente_contact
-      name: Porta principal
-    - entity: binary_sensor.porta_quintal_contact
-      name: Porta do quintal
-    - entity: binary_sensor.porta_da_frente_acceleration
-      name: Vibração
-    - entity: light.luzes_do_sofa_da_sala
+    - entity: light.lamps_living_room_sofa
       name: Luzes do sofá
-    - entity: light.luzes_da_janela_da_sala
+    - entity: light.lamps_living_room_window
       nane: Luzes da Janela
-    - entity: light.luzes_da_porta_do_quintal_da_sala
+    - entity: light.lamps_living_room_garden
       nane: Luzes da porta do quintal
-    - entity: light.luzes_da_tv_da_sala
+    - entity: light.lamps_living_room_tv
       nane: Luzes da televisão
-    - entity: light.office
-      name: Luzes do escritório
+    - entity: light.lamps_living_room_tv_side
+      nane: Luzes da televisão (Lateral)
+    - entity: switch.circadian_lighting_luzes_janela_circadian
+    - type: divider
+    - entity: light.lamp_living_room_sofa_1_light
+      name: Luz do safá 1
+    - entity: light.lamp_living_room_sofa_2_light
+      name: Luz do safá 2
+    - entity: light.lamp_living_room_sofa_3_light
+      name: Luz do safá 3
+    - entity: light.lamp_living_room_sofa_4_light
+      name: Luz do safá 4
+    - type: divider
+    - entity: light.lamp_living_room_window_1_light
+      name: Luz do Janela 1
+    - entity: light.lamp_living_room_window_2_light
+      name: Luz do Janela 2
+    - type: divider
+    - entity: light.lamp_living_room_garden_1_light
+      name: Luz do quintal 1
+    - entity: light.lamp_living_room_garden_2_light
+      name: Luz do quintal 2
+    - entity: light.lamp_living_room_garden_3_light
+      name: Luz do quintal 3
+    - type: divider
+    - entity: light.lamp_living_room_tv_1_light
+      name: Luz do tv 1
+    - entity: light.lamp_living_room_tv_2_light
+      name: Luz do tv 2
+    - entity: light.lamp_living_room_tv_3_light
+      name: Luz do tv 3
+    - entity: light.lamp_living_room_tv_4_light
+      name: Luz do tv 4 (Lateral)
+    - entity: light.lamp_living_room_tv_5_light
+      name: Luz do tv 5 (Lateral)
+    - type: divider
+    - entity: light.lamp_living_room_door_light
+      name: Luz da porta principal
+    - entity: light.lamp_living_room_kitchen_light
+      name: Luz da porta da cozinha
+    - type: custom:mini-graph-card
+      entities:
+        - sensor.adega_temperature
+      name: Adega
+      hours_to_show: 168
+      points_per_hour: 0.25
+
 
 - type: entities
   title: Lavanderia
@@ -36,54 +73,19 @@
   title: Quarto
   show_header_toggle: false
   entities:
-    - entity: sensor.temperatura_quarto
+    - entity: light.lamp_bedroom_right_light
+      name: Lampada Aurelio
+    - entity: light.lamp_bedroom_left_light
+      name: Lampada Camila
+    - type: custom:mini-graph-card
+      entities:
+        - sensor.temperature_bedroom_temperature
       name: Temperatura
-    - entity: sensor.temperatura_relative_humidity_quarto
+      hours_to_show: 168
+      points_per_hour: 0.25
+    - type: custom:mini-graph-card
+      entities:
+        - sensor.temperature_bedroom_humidity
       name: Humidade
-
-- type: entities
-  title: Bateria
-  show_header_toggle: false
-  entities:
-    - entity: sensor.porta_da_frente_battery
-      name: Sensor porta principal
-    - entity: sensor.porta_dos_fundos_battery
-      name: Sensor porta da lavanderia
-    - entity: sensor.porta_quintal_battery_3
-      name: Sensor porta do quintal
-    - entity: sensor.temperatura_battery
-      name: Sensor de temperatura do quarto
-    - entity: sensor.sensor_de_movimento_da_entrada_battery
-      name: Sensor de movimento da entrada
-    - entity: sensor.porta_do_banheiro_battery
-      name: Sensor porta banheiro da social
-    - entity: sensor.porta_cozinha_battery
-      name: Sensor porta da cozinha
-    - entity: sensor.sensor_de_movimento_quintal_battery_2
-      name: Sendor de movimento do quintal
-    - entity: sensor.sensor_de_movimento_cozinha_battery
-      name: Sensor de movimento da cozinha
-
-
-- type: entities
-  title: Dispositivos
-  show_header_toggle: false
-  entities:
-    - entity: sensor.media_player_count
-      icon: mdi:cast
-      name: Multimidia
-    - entity: sensor.tracker_count
-      icon: mdi:cellphone-link
-      name: Número de Devices
-    - entity: sensor.lights_count
-      icon: mdi:lightbulb
-    - entity: sensor.binary_sensor_count
-      icon: mdi:nintendo-switch
-    - entity: sensor.switch_count
-      icon: mdi:toggle-switch
-    - entity: sensor.automation_count
-      icon: mdi:home-assistant
-    - entity: sensor.script_count
-      icon: mdi:script-text-outline
-    - entity: sensor.sensor_count
-      icon: mdi:gauge
+      hours_to_show: 168
+      points_per_hour: 0.25

@@ -10,6 +10,14 @@
 
 speech_processing:
   sequence:
+    - service: mqtt.publish
+      data_template:
+        topic: 'polly/lastmsg'
+        payload: "{{ now().strftime('%-I') }}:{{ now().strftime('%M') }} {{ now().strftime('%p') }}. {{ speech_message | truncate(220)}}"
+        retain: true
+    - service: notify.AURELIO
+      data_template:
+        message: "{{ now().strftime('%-I') }}:{{ now().strftime('%M') }} {{ now().strftime('%p') }}. {{ speech_message | truncate(220)}}"
     - condition: and
       conditions:
         - condition: or
@@ -43,7 +51,7 @@ speech_processing:
          {% else %}
            0.3
          {% endif %}
-
+    - delay: 1
     - service: notify.alexa_media
       data_template:
         target: >

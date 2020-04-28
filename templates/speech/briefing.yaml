@@ -1,5 +1,35 @@
   >-
 
+  {%- macro iss() -%}
+  {% if is_state('binary_sensor.iss', 'on') -%}
+      Tenho algo interessante. A estação espacial internacional está acima de nós agora. Existem {{states.binary_sensor.iss.attributes ['number_of_people_in_space']}} pessoas no espaço agora.
+  {% endif -%}
+  {%- endmacro -%}
+
+  {%- macro moon() -%}
+    {% if states.sensor.moon.state == 'full_moon' %}
+      {{ [
+          "Confira a lua cheia hoje à noite!",
+          "Ei, olhe, ha lua cheia.",
+          "A lua é enorme! E cheia.",
+          "Se você quer ver a lua cheia hoje à noite é hoje a noite."
+      ] | random }}
+    {% elif states.sensor.moon.state == 'new_moon' %}
+      {{ [
+        "Confira a lua nova hoje à noite!",
+        "Ei, olhe, há lua nova hoje.",
+        "A lua ainda esta pequena. Confira a lua nova."
+      ] | random }}
+
+    {% elif states.sensor.moon.state == 'waning_gibbous' %}
+      {{ [
+        "Confira a lua minguante hoje à noite!",
+        "Ei, olhe, há lua minguante hoje.",
+        "A lua esta bem fininha hoje. Confira a lua minguante."
+      ] | random }}
+    {% endif %}
+  {%- endmacro -%}
+
   {% if call_no_announcement != 1 %}
   {% if now().strftime('%H')|int < 12 and now().strftime('%H')|int > 6 %}
       Bom dia.
@@ -10,4 +40,7 @@
   {% endif %}
   {% endif %}
 
-  {{ personarriving }}
+  {{ custom_message }}
+
+
+  {{ ([iss, moon]|random)() }}

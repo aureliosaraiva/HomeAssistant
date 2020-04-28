@@ -12,3 +12,4 @@ tts
 .DS_Store
 ._.DS_Store
 *.pickle
+zigbee2mqtt
