@@ -12,6 +12,8 @@
   action:
     - service: script.speech_engine
       data_template:
+        media_player:
+          - media_player.echo_de_aurelio
         custom_message: >
           {{ [
            "Modo filme ativado. Vou ajustar as luzes.",
@@ -21,7 +23,7 @@
            "Vou ajustar as luzes para assitir o filme mais confortável."
            ] | random }}
         call_no_announcement: 1
-    - delay: 1
+        call_no_random: 1
     - service: scene.turn_on
       entity_id: scene.light_movie_enable
     - service: automation.turn_on

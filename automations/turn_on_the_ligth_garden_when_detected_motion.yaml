@@ -2,7 +2,7 @@
   alias: turn_on_the_ligth_garden_when_detected_motion
   trigger:
     - platform: state
-      entity_id: binary_sensor.sensor_de_movimento_quintal_motion
+      entity_id: binary_sensor.motion_garden_occupancy
       from: 'off'
       to: 'on'
   condition:
@@ -12,13 +12,29 @@
     - condition: and
       conditions:
         - condition: state
-          entity_id: binary_sensor.porta_quintal_contact
+          entity_id: binary_sensor.door_garden_contact
           state: 'on'
-        - condition: or
-          conditions:
-            - condition: state
-              entity_id: binary_sensor.porta_dos_fundos_contact
-              state: 'on'
+        # - condition: or
+        #   conditions:
+        #     - condition: state
+        #       entity_id: binary_sensor.porta_dos_fundos_contact
+        #       state: 'on'
   action:
     - service: switch.turn_on
-      entity_id: switch.luzes_da_churrasqueira
+      entity_id: switch.lamp_kiosk_switch
+
+- id: turn_off_the_ligth_garden_when_dont_detected_motion
+  alias: turn_off_the_ligth_garden_when_dont_detected_motion
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_garden_occupancy
+      from: 'on'
+      to: 'off'
+      for: '00:10:00'
+  condition:
+    - condition: time
+      after: '18:00:00'
+      before: '03:00:00'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.lamp_kiosk_switch

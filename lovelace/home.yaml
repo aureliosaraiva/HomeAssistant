@@ -2,7 +2,7 @@
   image: /local/floorplans/main.jpg
   elements:
     - type: state-icon
-      entity: light.lampada_janela_2
+      entity: light.lamp_living_room_window_1_light
       tap_action:
         action: toggle
       hold_action:
@@ -12,7 +12,7 @@
         left: 51%
 
     - type: state-icon
-      entity: light.lampada_janela_1
+      entity: light.lamp_living_room_window_2_light
       tap_action:
         action: toggle
       hold_action:
@@ -22,7 +22,7 @@
         left: 76%
 
     - type: state-icon
-      entity: light.lampada_porta
+      entity: light.lamp_living_room_door_light
       tap_action:
         action: toggle
       hold_action:
@@ -32,7 +32,7 @@
         left: 90%
 
     - type: state-icon
-      entity: light.lampada_tv_1
+      entity: light.lamp_living_room_tv_1_light
       tap_action:
         action: toggle
       hold_action:
@@ -42,7 +42,7 @@
         left: 95%
 
     - type: state-icon
-      entity: light.lampada_tv_2
+      entity: light.lamp_living_room_tv_2_light
       tap_action:
         action: toggle
       hold_action:
@@ -52,7 +52,7 @@
         left: 95%
 
     - type: state-icon
-      entity: light.lampada_tv_3
+      entity: light.lamp_living_room_tv_3_light
       tap_action:
         action: toggle
       hold_action:
@@ -62,7 +62,7 @@
         left: 95%
 
     - type: state-icon
-      entity: light.lampada_tv_4
+      entity: light.lamp_living_room_tv_4_light
       tap_action:
         action: toggle
       hold_action:
@@ -72,7 +72,7 @@
         left: 90%
 
     - type: state-icon
-      entity: light.lampada_tv_5
+      entity: light.lamp_living_room_tv_5_light
       tap_action:
         action: toggle
       hold_action:
@@ -82,7 +82,7 @@
         left: 76%
 
     - type: state-icon
-      entity: light.lampada_quintal_1
+      entity: light.lamp_living_room_garden_1_light
       tap_action:
         action: toggle
       hold_action:
@@ -92,7 +92,7 @@
         left: 37%
 
     - type: state-icon
-      entity: light.lampada_quintal_2
+      entity: light.lamp_living_room_garden_2_light
       tap_action:
         action: toggle
       hold_action:
@@ -102,7 +102,7 @@
         left: 37%
 
     - type: state-icon
-      entity: light.lampada_quintal_3
+      entity: light.lamp_living_room_garden_3_light
       tap_action:
         action: toggle
       hold_action:
@@ -112,7 +112,7 @@
         left: 37%
 
     - type: state-icon
-      entity: light.lampada_sofa_1
+      entity: light.lamp_living_room_sofa_1_light
       tap_action:
         action: toggle
       hold_action:
@@ -122,7 +122,7 @@
         left: 57%
 
     - type: state-icon
-      entity: light.lampada_sofa_2
+      entity: light.lamp_living_room_sofa_2_light
       tap_action:
         action: toggle
       hold_action:
@@ -132,7 +132,7 @@
         left: 42%
 
     - type: state-icon
-      entity: light.lampada_sofa_3
+      entity: light.lamp_living_room_sofa_3_light
       tap_action:
         action: toggle
       hold_action:
@@ -142,7 +142,7 @@
         left: 57%
 
     - type: state-icon
-      entity: light.lampada_sofa_4
+      entity: light.lamp_living_room_sofa_4_light
       tap_action:
         action: toggle
       hold_action:
@@ -152,7 +152,7 @@
         left: 42%
 
     - type: state-icon
-      entity: light.lampada_porta_cozinha
+      entity: light.lamp_living_room_kitchen_light
       tap_action:
         action: toggle
       hold_action:
@@ -162,7 +162,7 @@
         left: 70%
 
     - type: state-label
-      entity: sensor.motion_sensor_porta_da_frente_temperature_measurement
+      entity: sensor.motion_external_door_temperature
       style:
         top: 8%
         left: 90%
@@ -174,7 +174,7 @@
         font-weight: bold
 
     - type: state-icon
-      entity: binary_sensor.motion_sensor_porta_da_frente_motion
+      entity: binary_sensor.motion_external_door_occupancy
       style:
         top: 3%
         left: 90%
@@ -204,7 +204,7 @@
         font-weight: bold
 
     - type: state-label
-      entity: sensor.sensor_de_movimento_cozinha_temperature_measurement
+      entity: sensor.motion_kitchen_temperature
       style:
         top: 80%
         left: 87%
@@ -216,26 +216,26 @@
         font-weight: bold
 
     - type: state-icon
-      entity: binary_sensor.sensor_de_movimento_quintal_motion
+      entity: binary_sensor.motion_garden_occupancy
       style:
         top: 40%
         left: 20%
 
     - type: state-icon
-      entity: binary_sensor.sensor_de_movimento_cozinha_motion
+      entity: binary_sensor.motion_kitchen_occupancy
       style:
         top: 80%
         left: 75%
 
     - type: state-icon
-      entity: switch.luzes_da_churrasqueira
+      entity: switch.lamp_kiosk_switch
       icon: mdi:lightbulb-on
       style:
         top: 90%
         left: 10%
 
     - type: state-label
-      entity: sensor.sensor_de_movimento_quintal_temperature_measurement
+      entity: sensor.motion_garden_temperature
       style:
         top: 45%
         left: 20%
@@ -247,7 +247,7 @@
         font-weight: bold
 
     - type: state-icon
-      entity: binary_sensor.porta_quintal_contact
+      entity: binary_sensor.door_garden_contact
       style:
         top: 40%
         left: 30%

@@ -2,6 +2,9 @@
   title: Sala
   show_header_toggle: false
   entities:
+    - entity: light.lamps_living_room
+      name: Todas as Luzes da Sala
+    - type: divider
     - entity: light.lamps_living_room_sofa
       name: Luzes do sofá
     - entity: light.lamps_living_room_window
@@ -62,12 +65,23 @@
   title: Lavanderia
   show_header_toggle: false
   entities:
-    - entity: sensor.temperature_lavanderia
-      name: Temperatura
-    - entity: binary_sensor.porta_dos_fundos_contact
-      name: Porta
-    - entity: binary_sensor.porta_dos_fundos_acceleration
-      name: Vibração
+    - type: custom:mini-graph-card
+      entities:
+        - sensor.washing_machine_wattage
+      name: Wattage
+      hours_to_show: 168
+      points_per_hour: 0.1
+      align_icon: left
+      align_state: center
+      show:
+        fill: false
+      color_thresholds:
+        - value: 20
+          color: "#f39c12"
+        - value: 21
+          color: "#d35400"
+        - value: 21.5
+          color: "#c0392b"
 
 - type: entities
   title: Quarto

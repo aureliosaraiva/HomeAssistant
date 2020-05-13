@@ -23,24 +23,26 @@
 
     {% elif states.sensor.moon.state == 'waning_gibbous' %}
       {{ [
-        "Confira a lua minguante hoje à noite!",
-        "Ei, olhe, há lua minguante hoje.",
-        "A lua esta bem fininha hoje. Confira a lua minguante."
+        "<break time=\"1s\" />Ha, mais uma coisa, <break time=\"1s\" />você sabia que é lua minguante hoje à noite?",
+        "<break time=\"1s\" />Ha, mais uma coisa, <break time=\"1s\" />a lua está minguante hoje!",
+        "<break time=\"1s\" />Ha, mais uma coisa, <break time=\"1s\" /><emphasis level=\"moderate\">nossa</emphasis> a lua esta bem fininha hoje."
       ] | random }}
     {% endif %}
   {%- endmacro -%}
+  <speak>
+    {% if call_no_announcement != 1 %}
+    {% if now().strftime('%H')|int < 12 and now().strftime('%H')|int > 6 %}
+        <p><emphasis level="moderate">Bom dia.</emphasis></p>
+    {% elif now().strftime('%H')|int >= 12 and now().strftime('%H')|int < 17 %}
+        <p><emphasis level="moderate">Boa tarde.</emphasis></p>
+    {% else %}
+        <p><emphasis level="moderate">Boa noite.</emphasis></p>
+    {% endif %}
+    {% endif %}
 
-  {% if call_no_announcement != 1 %}
-  {% if now().strftime('%H')|int < 12 and now().strftime('%H')|int > 6 %}
-      Bom dia.
-  {% elif now().strftime('%H')|int >= 12 and now().strftime('%H')|int < 17 %}
-      Boa tarde.
-  {% else %}
-      Boa noite.
-  {% endif %}
-  {% endif %}
+    <p>{{ custom_message }}</p>
 
-  {{ custom_message }}
-
-
-  {{ ([iss, moon]|random)() }}
+    {% if call_no_random != 1 %}
+    <p>{{ ([moon]|random)() }}</p>
+    {% endif %}
+  </speak>

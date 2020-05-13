@@ -24,6 +24,7 @@ mqtt:
 
 webhook:
 circadian_lighting:
+shopping_list:
 
 zigbee2mqtt_networkmap:
 #topic: your topic (optional, default zigbee2mqtt)
@@ -163,3 +164,41 @@ timer:
   zigbee_permit_join:
     name: Tempo restante
     duration: 600
+
+input_select:
+  washing_machine_status:
+    name: Opções da Máquina de Lavar
+    options:
+      - Desligada
+      - Enchendo
+      - Batendo
+      - Molho
+      - Esvaziando
+      - Centrifugando
+    initial: Desligada
+    icon: mdi:washing-machine
+  watt_card:
+    name: Watt Hours
+    options:
+      - 24
+      - 12
+      - 4
+      - 2
+      - 1
+      - 48
+      - 72
+    initial: 24
+    icon: mdi:flash
+
+
+utility_meter:
+  washing_machine_year_energy:
+    source: sensor.washing_machine_total_daily_energy
+    cycle: yearly
+    tariffs:
+      - peak
+  washing_machine_month_energy:
+    source: sensor.washing_machine_total_daily_energy
+    cycle: monthly
+    tariffs:
+      - peak

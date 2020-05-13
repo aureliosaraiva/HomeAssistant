@@ -1,0 +1,34 @@
+- id: alexa_shopping_list_add
+  alias: alexa_shopping_list_add
+  trigger:
+  - event_data:
+      action: alexa_add_shopping_list
+    event_type: ifttt_webhook_received
+    platform: event
+  condition: []
+  action:
+    - service: notify.AURELIO
+      data_template:
+        message: "Novo item: {{ trigger.event.data.name }}"
+    - service: shopping_list.add_item
+      data_template:
+        name: "{{ trigger.event.data.name }}"
+    - service: notify.AURELIO
+      data_template:
+        message: '{{states.sensor.shopping_list.state}}'
+
+
+- alias: shopping_list_notification
+  trigger:
+  - entity_id: pdevice_tracker.life360_aurelio_saraiva
+    event: enter
+    platform: zone
+    zone: zone.diana
+  action:
+  - service: notify.AURELIO
+    data_template:
+      message: >
+        "
+        Lista de compras:
+        {{states.sensor.shopping_list.state}}
+        "

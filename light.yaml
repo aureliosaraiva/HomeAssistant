@@ -1,4 +1,24 @@
 - platform: group
+  name: lamps_living_room
+  entities:
+    - light.lamp_living_room_sofa_1_light
+    - light.lamp_living_room_sofa_2_light
+    - light.lamp_living_room_sofa_3_light
+    - light.lamp_living_room_sofa_4_light
+    - light.lamp_living_room_window_1_light
+    - light.lamp_living_room_window_2_light
+    - light.lamp_living_room_tv_1_light
+    - light.lamp_living_room_tv_2_light
+    - light.lamp_living_room_tv_3_light
+    - light.lamp_living_room_tv_4_light
+    - light.lamp_living_room_tv_5_light
+    - light.lamp_living_room_garden_1_light
+    - light.lamp_living_room_garden_2_light
+    - light.lamp_living_room_garden_3_light
+    - light.lamp_living_room_kitchen_light
+    - light.lamp_living_room_door_light
+
+- platform: group
   name: lamps_living_room_sofa
   entities:
     - light.lamp_living_room_sofa_1_light

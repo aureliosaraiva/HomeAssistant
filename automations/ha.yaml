@@ -1,0 +1,45 @@
+- alias: Restart HA
+  trigger:
+    platform: time
+    at: "02:00:00"
+  condition:
+    condition: time
+    weekday:
+    - sun
+    - wed
+    - fri
+  action:
+    - service: notify.AURELIO
+      data:
+        message: 'Auto-Reboot HomeAssistan'
+    - service: homeassistant.restart
+
+- alias: Home Assistant Started
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - service: script.speech_engine
+      data_template:
+        media_player: media_player.echo_dot_laboratorio
+        custom_message: >
+          {{ [
+           "Parece que voltei a vida. Vou monitorar a casa.",
+           "Finalmente meus sistemas estão on-line novamente.",
+           "Estou iniciando meus sistemas. Só um momento."
+           ] | random }}
+
+- alias: Home Assistant Shutdown
+  trigger:
+    platform: homeassistant
+    event: shutdown
+  action:
+    - service: script.speech_engine
+      data_template:
+        media_player: media_player.echo_dot_laboratorio
+        custom_message: >
+          {{ [
+           "Só um momento, preciso reiniciar meus sistemas.",
+           "Só um momento, preciso reiniciar meus sensores.",
+           "Solicitaram que eu reiniar, só um momento, já voltou."
+           ] | random }}
