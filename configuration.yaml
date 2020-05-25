@@ -166,17 +166,6 @@ timer:
     duration: 600
 
 input_select:
-  washing_machine_status:
-    name: Opções da Máquina de Lavar
-    options:
-      - Desligada
-      - Enchendo
-      - Batendo
-      - Molho
-      - Esvaziando
-      - Centrifugando
-    initial: Desligada
-    icon: mdi:washing-machine
   watt_card:
     name: Watt Hours
     options:

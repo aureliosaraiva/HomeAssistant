@@ -9,8 +9,8 @@
       for: '00:02:00'
 
   action:
-    - wait_template: >-
-        {{ states.binary_sensor.door_living_room_contact.state == 'on' }}
+    - wait_template: "{{ states.binary_sensor.door_main_contact.state == 'on' }}"
+      continue_on_timeout: false
     - service: script.speech_engine
       data_template:
         media_player: media_player.echo_de_aurelio

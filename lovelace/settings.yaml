@@ -62,28 +62,6 @@
 
 
 - type: entities
-  title: Lavanderia
-  show_header_toggle: false
-  entities:
-    - type: custom:mini-graph-card
-      entities:
-        - sensor.washing_machine_wattage
-      name: Wattage
-      hours_to_show: 168
-      points_per_hour: 0.1
-      align_icon: left
-      align_state: center
-      show:
-        fill: false
-      color_thresholds:
-        - value: 20
-          color: "#f39c12"
-        - value: 21
-          color: "#d35400"
-        - value: 21.5
-          color: "#c0392b"
-
-- type: entities
   title: Quarto
   show_header_toggle: false
   entities:
@@ -91,15 +69,3 @@
       name: Lampada Aurelio
     - entity: light.lamp_bedroom_left_light
       name: Lampada Camila
-    - type: custom:mini-graph-card
-      entities:
-        - sensor.temperature_bedroom_temperature
-      name: Temperatura
-      hours_to_show: 168
-      points_per_hour: 0.25
-    - type: custom:mini-graph-card
-      entities:
-        - sensor.temperature_bedroom_humidity
-      name: Humidade
-      hours_to_show: 168
-      points_per_hour: 0.25

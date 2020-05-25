@@ -180,30 +180,6 @@
         left: 90%
 
     - type: state-label
-      entity: sensor.porta_da_frente_temperature_measurement
-      style:
-        top: 31%
-        left: 87%
-        color: "#000"
-        border-radius: 50%
-        text-align: center
-        background-color: "rgba(255, 255, 255, 0.3)"
-        font-size: 11px
-        font-weight: bold
-
-    - type: state-label
-      entity: sensor.porta_dos_fundos_temperature_measurement
-      style:
-        top: 86%
-        left: 57%
-        color: "#000"
-        border-radius: 50%
-        text-align: center
-        background-color: "rgba(255, 255, 255, 0.3)"
-        font-size: 11px
-        font-weight: bold
-
-    - type: state-label
       entity: sensor.motion_kitchen_temperature
       style:
         top: 80%
@@ -252,26 +228,16 @@
         top: 40%
         left: 30%
 
-    - type: state-icon
-      entity: binary_sensor.porta_dos_fundos_contact
-      style:
-        top: 95%
-        left: 60%
 
     - type: state-icon
-      entity: binary_sensor.porta_da_frente_contact
+      entity: binary_sensor.door_main_contact
       style:
         top: 12%
         left: 90%
 
-    - type: state-icon
-      entity: binary_sensor.porta_banheiro_contact
-      style:
-        top: 61%
-        left: 78%
 
     - type: state-icon
-      entity: binary_sensor.porta_cozinha_contact
+      entity: binary_sensor.door_kitchen_contact
       style:
         top: 58%
         left: 70%
