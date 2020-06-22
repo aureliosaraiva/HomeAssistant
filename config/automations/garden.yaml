@@ -1,0 +1,62 @@
+- id: turn_off_the_ligth_when_all_external_door_is_close
+  alias: turn_off_the_ligth_when_all_external_door_is_close
+  trigger:
+    - platform: state
+      entity_id:
+        - binary_sensor.door_garden_contact
+        - binary_sensor.door_laundry_contact
+      from: 'on'
+      to: 'off'
+  condition:
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: binary_sensor.door_garden_contact
+          state: 'off'
+        - condition: state
+          entity_id: binary_sensor.door_laundry_contact
+          state: 'off'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.lamp_kiosk_switch
+
+- id: turn_on_the_ligth_garden_when_detected_motion
+  alias: turn_on_the_ligth_garden_when_detected_motion
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_garden_occupancy
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: and
+      conditions:
+        - condition: time
+          after: '17:30:00'
+          before: '03:00:00'
+        - condition: or
+          conditions:
+            - condition: state
+              entity_id: binary_sensor.door_garden_contact
+              state: 'on'
+            - condition: state
+              entity_id: binary_sensor.door_laundry_contact
+              state: 'on'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.lamp_kiosk_switch
+
+- id: turn_off_the_ligth_garden_when_dont_detected_motion
+  alias: turn_off_the_ligth_garden_when_dont_detected_motion
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_garden_occupancy
+      from: 'on'
+      to: 'off'
+      for: '00:10:00'
+  condition:
+    - condition: time
+      after: '17:30:00'
+      before: '03:00:00'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.lamp_kiosk_switch

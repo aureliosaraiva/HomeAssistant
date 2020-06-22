@@ -1,0 +1,14 @@
+- id: turn_on_the_ligth_bedroom_when_detected_motion
+  alias: turn_on_the_ligth_bedroom_when_detected_motion
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_bedroom_occupancy
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: time
+      after: '18:30:00'
+      before: '23:00:00'
+  action:
+    - service: scene.turn_on
+      entity_id: scene.turn_on_motion_bedroom

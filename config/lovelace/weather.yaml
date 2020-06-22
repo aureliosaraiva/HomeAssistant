@@ -1,0 +1,262 @@
+- type: vertical-stack
+  title: Sala
+  show_header_toggle: false
+  cards:
+    - type: horizontal-stack
+      cards:
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.temperature_livingroom_humidity
+              name: Humidade
+          line_color: blue
+          line_width: 4
+          font_size: 75
+          hours_to_show: 24
+          points_per_hour: 2
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.lux_living_room_illuminance_lux
+              name: Iluminação
+          line_color: '#e74c3c'
+          line_width: 4
+          font_size: 75
+          hours_to_show: 24
+          points_per_hour: 2
+    - type: horizontal-stack
+      cards:
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.temperature_livingroom_temperature
+              name: Temperatura
+          line_color: orange
+          line_width: 4
+          font_size: 75
+          hours_to_show: 24
+          points_per_hour: 2
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.temperature_livingroom_pressure
+              name: Pressão
+          line_color: green
+          line_width: 4
+          font_size: 75
+          hours_to_show: 24
+          points_per_hour: 2
+
+
+- type: vertical-stack
+  title: Quarto
+  show_header_toggle: false
+  cards:
+    - type: horizontal-stack
+      cards:
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.temperature_bedroom_humidity
+              name: Humidade
+          line_color: blue
+          line_width: 4
+          font_size: 75
+          hours_to_show: 24
+          points_per_hour: 2
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.motion_bedroom_illuminance
+              name: Iluminação
+          line_color: '#e74c3c'
+          line_width: 4
+          font_size: 75
+          hours_to_show: 24
+          points_per_hour: 2
+    - type: horizontal-stack
+      cards:
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.temperature_bedroom_temperature
+              name: Temperatura
+          line_color: orange
+          line_width: 4
+          font_size: 75
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.temperature_bedroom_pressure
+              name: Pressão
+          line_color: green
+          line_width: 4
+          font_size: 75
+          hours_to_show: 24
+          points_per_hour: 2
+
+- type: vertical-stack
+  title: Banheiro Suite
+  show_header_toggle: false
+  cards:
+    - type: horizontal-stack
+      cards:
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.temperature_bathroom_humidity
+              name: Humidade
+          line_color: blue
+          line_width: 4
+          font_size: 75
+          hours_to_show: 24
+          points_per_hour: 2
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.temperature_bathroom_temperature
+              name: Temperatura
+          line_color: orange
+          line_width: 4
+          font_size: 75
+          hours_to_show: 24
+          points_per_hour: 2
+    - type: horizontal-stack
+      cards:
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.temperature_bathroom_pressure
+              name: Pressão
+          line_color: green
+          line_width: 4
+          font_size: 75
+          hours_to_show: 24
+          points_per_hour: 2
+
+
+- type: vertical-stack
+  title: Escritório
+  show_header_toggle: false
+  cards:
+    - type: horizontal-stack
+      cards:
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.temperature_office_humidity
+              name: Humidade
+          line_color: blue
+          line_width: 4
+          font_size: 75
+          hours_to_show: 24
+          points_per_hour: 2
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.motion_office_illuminance
+              name: Iluminação
+          line_color: '#e74c3c'
+          line_width: 4
+          font_size: 75
+          hours_to_show: 24
+          points_per_hour: 2
+    - type: horizontal-stack
+      cards:
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.temperature_office_temperature
+              name: Temperatura
+          line_color: orange
+          line_width: 4
+          font_size: 75
+          hours_to_show: 24
+          points_per_hour: 2
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.temperature_office_pressure
+              name: Pressão
+          line_color: green
+          line_width: 4
+          font_size: 75
+          hours_to_show: 24
+          points_per_hour: 2
+
+
+- type: vertical-stack
+  title: Laboratório
+  show_header_toggle: false
+  cards:
+    - type: horizontal-stack
+      cards:
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.temperature_laboratory_humidity
+              name: Humidade
+          line_color: blue
+          line_width: 4
+          font_size: 75
+          hours_to_show: 24
+          points_per_hour: 2
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.motion_laboratory_illuminance
+              name: Iluminação
+          line_color: '#e74c3c'
+          line_width: 4
+          font_size: 75
+          hours_to_show: 24
+          points_per_hour: 2
+    - type: horizontal-stack
+      cards:
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.temperature_laboratory_temperature
+              name: Temperatura
+          line_color: orange
+          line_width: 4
+          font_size: 75
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.temperature_laboratory_pressure
+              name: Pressão
+          line_color: green
+          line_width: 4
+          font_size: 75
+          hours_to_show: 24
+          points_per_hour: 2
+
+- type: vertical-stack
+  title: Cozinha
+  show_header_toggle: false
+  cards:
+    - type: horizontal-stack
+      cards:
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.motion_kitchen_temperature
+              name: Temperatura
+          line_color: orange
+          line_width: 4
+          font_size: 75
+          hours_to_show: 24
+          points_per_hour: 2
+
+- type: vertical-stack
+  title: Área da frente
+  show_header_toggle: false
+  cards:
+    - type: horizontal-stack
+      cards:
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.motion_external_door_temperature
+              name: Temperatura
+          line_color: orange
+          line_width: 4
+          font_size: 75
+          hours_to_show: 24
+          points_per_hour: 2
+
+- type: vertical-stack
+  title: Quintal
+  show_header_toggle: false
+  cards:
+    - type: horizontal-stack
+      cards:
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.motion_garden_temperature
+              name: Temperatura
+          line_color: orange
+          line_width: 4
+          font_size: 75
+          hours_to_show: 24
+          points_per_hour: 2

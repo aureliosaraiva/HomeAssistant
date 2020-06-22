@@ -1,0 +1,348 @@
+- type: picture-elements
+  image: /local/floorplans/main.jpg
+  elements:
+    - type: state-icon
+      entity: light.lamp_living_room_window_1_light
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+      style:
+        top: 18%
+        left: 51%
+
+    - type: state-icon
+      entity: light.lamp_living_room_window_2_light
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+      style:
+        top: 18%
+        left: 76%
+
+    - type: state-icon
+      entity: light.lamp_living_room_door_light
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+      style:
+        top: 18%
+        left: 90%
+
+    - type: state-icon
+      entity: light.lamp_living_room_tv_1_light
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+      style:
+        top: 22%
+        left: 95%
+
+    - type: state-icon
+      entity: light.lamp_living_room_tv_2_light
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+      style:
+        top: 31%
+        left: 95%
+
+    - type: state-icon
+      entity: light.lamp_living_room_tv_3_light
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+      style:
+        top: 41%
+        left: 95%
+
+    - type: state-icon
+      entity: light.lamp_living_room_tv_4_light
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+      style:
+        top: 43%
+        left: 90%
+
+    - type: state-icon
+      entity: light.lamp_living_room_tv_5_light
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+      style:
+        top: 43%
+        left: 76%
+
+    - type: state-icon
+      entity: light.lamp_living_room_garden_1_light
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+      style:
+        top: 25%
+        left: 37%
+
+    - type: state-icon
+      entity: light.lamp_living_room_garden_2_light
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+      style:
+        top: 33%
+        left: 37%
+
+    - type: state-icon
+      entity: light.lamp_living_room_garden_3_light
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+      style:
+        top: 41%
+        left: 37%
+
+    - type: state-label
+      entity: sensor.adega_temperature
+      style:
+        top: 29%
+        left: 41%
+        color: "#000"
+        border-radius: 50%
+        text-align: center
+        background-color: "rgba(255, 255, 255, 0.3)"
+        font-size: 11px
+        font-weight: bold
+
+    - type: state-label
+      entity: sensor.lux_living_room_illuminance_lux
+      style:
+        top: 41%
+        left: 50%
+        color: "#000"
+        border-radius: 50%
+        text-align: center
+        background-color: "rgba(255, 255, 255, 0.3)"
+        font-size: 11px
+        font-weight: bold
+
+    - type: state-label
+      entity: sensor.temperature_livingroom_temperature
+      style:
+        top: 41%
+        left: 64%
+        color: "#000"
+        border-radius: 50%
+        text-align: center
+        background-color: "rgba(255, 255, 255, 0.3)"
+        font-size: 11px
+        font-weight: bold
+
+    - type: state-icon
+      entity: binary_sensor.motion_stair_occupancy
+      style:
+        top: 50%
+        left: 90%
+
+    - type: state-label
+      entity: sensor.motion_stair_illuminance
+      style:
+        top: 50%
+        left: 80%
+        color: "#000"
+        border-radius: 50%
+        text-align: center
+        background-color: "rgba(255, 255, 255, 0.3)"
+        font-size: 11px
+        font-weight: bold
+
+    - type: state-icon
+      entity: light.lamp_living_room_sofa_1_light
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+      style:
+        top: 52%
+        left: 57%
+
+    - type: state-icon
+      entity: light.lamp_living_room_sofa_2_light
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+      style:
+        top: 52%
+        left: 42%
+
+    - type: state-icon
+      entity: light.lamp_living_room_sofa_3_light
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+      style:
+        top: 59%
+        left: 57%
+
+    - type: state-icon
+      entity: light.lamp_living_room_sofa_4_light
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+      style:
+        top: 59%
+        left: 42%
+
+    - type: state-icon
+      entity: light.lamp_living_room_kitchen_light
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+      style:
+        top: 63%
+        left: 70%
+
+    - type: state-label
+      entity: sensor.motion_external_door_temperature
+      style:
+        top: 8%
+        left: 90%
+        color: "#FFF"
+        border-radius: 50%
+        text-align: center
+        background-color: "rgba(0, 0, 0, 0.3)"
+        font-size: 11px
+        font-weight: bold
+
+    - type: state-icon
+      entity: binary_sensor.motion_external_door_occupancy
+      style:
+        top: 3%
+        left: 90%
+
+    - type: state-label
+      entity: sensor.motion_kitchen_temperature
+      style:
+        top: 80%
+        left: 87%
+        color: "#000"
+        border-radius: 50%
+        text-align: center
+        background-color: "rgba(255, 255, 255, 0.3)"
+        font-size: 11px
+        font-weight: bold
+
+    - type: state-icon
+      entity: binary_sensor.motion_garden_occupancy
+      style:
+        top: 40%
+        left: 20%
+
+    - type: state-icon
+      entity: binary_sensor.motion_kitchen_occupancy
+      style:
+        top: 80%
+        left: 75%
+
+    - type: state-icon
+      entity: switch.lamp_kiosk_switch
+      icon: mdi:lightbulb-on
+      style:
+        top: 90%
+        left: 10%
+
+    - type: state-label
+      entity: sensor.motion_garden_temperature
+      style:
+        top: 45%
+        left: 20%
+        color: "#000"
+        border-radius: 50%
+        text-align: center
+        background-color: "rgba(255, 255, 255, 0.3)"
+        font-size: 11px
+        font-weight: bold
+
+    - type: state-icon
+      entity: binary_sensor.door_garden_contact
+      style:
+        top: 40%
+        left: 30%
+
+    - type: state-icon
+      entity: binary_sensor.door_laboratory_contact
+      style:
+        top: 78%
+        left: 47%
+
+    - type: state-label
+      entity: sensor.temperature_laboratory_temperature
+      style:
+        top: 68%
+        left: 43%
+        color: "#000"
+        border-radius: 50%
+        text-align: center
+        background-color: "rgba(255, 255, 255, 0.3)"
+        font-size: 11px
+        font-weight: bold
+
+    - type: state-icon
+      entity: binary_sensor.motion_laboratory_occupancy
+      style:
+        top: 73%
+        left: 43%
+
+
+    - type: state-icon
+      entity: binary_sensor.door_main_contact
+      style:
+        top: 12%
+        left: 90%
+
+
+    - type: state-icon
+      entity: binary_sensor.door_kitchen_contact
+      style:
+        top: 58%
+        left: 70%
+
+    - type: state-icon
+      entity: sensor.tv_living_room
+      style:
+        top: 35%
+        left: 88%
+
+    - type: state-icon
+      entity: binary_sensor.motion_garden_laundry_occupancy
+      style:
+        top: 95%
+        left: 50%
+
+    - type: state-label
+      entity: sensor.door_laundry_temperature
+      style:
+        top: 88%
+        left: 58%
+        color: "#000"
+        border-radius: 50%
+        text-align: center
+        background-color: "rgba(255, 255, 255, 0.3)"
+        font-size: 11px
+        font-weight: bold
+
+- entity: weather.casa_da_lara_mia
+  type: weather-forecast

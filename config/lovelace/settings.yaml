@@ -1,0 +1,98 @@
+- type: entities
+  title: Sala
+  show_header_toggle: false
+  entities:
+    - entity: light.lamps_living_room
+      name: Todas as Luzes da Sala
+    - type: divider
+    - entity: light.lamps_living_room_sofa
+      name: Luzes do sofá
+    - entity: light.lamps_living_room_window
+      nane: Luzes da Janela
+    - entity: light.lamps_living_room_garden
+      nane: Luzes da porta do quintal
+    - entity: light.lamps_living_room_tv
+      nane: Luzes da televisão
+    - entity: light.lamps_living_room_tv_side
+      nane: Luzes da televisão (Lateral)
+    - entity: switch.circadian_lighting_luzes_janela_circadian
+    - type: divider
+    - entity: light.lamp_living_room_sofa_1_light
+      name: Luz do safá 1
+    - entity: light.lamp_living_room_sofa_2_light
+      name: Luz do safá 2
+    - entity: light.lamp_living_room_sofa_3_light
+      name: Luz do safá 3
+    - entity: light.lamp_living_room_sofa_4_light
+      name: Luz do safá 4
+    - type: divider
+    - entity: light.lamp_living_room_window_1_light
+      name: Luz do Janela 1
+    - entity: light.lamp_living_room_window_2_light
+      name: Luz do Janela 2
+    - type: divider
+    - entity: light.lamp_living_room_garden_1_light
+      name: Luz do quintal 1
+    - entity: light.lamp_living_room_garden_2_light
+      name: Luz do quintal 2
+    - entity: light.lamp_living_room_garden_3_light
+      name: Luz do quintal 3
+    - type: divider
+    - entity: light.lamp_living_room_tv_1_light
+      name: Luz do tv 1
+    - entity: light.lamp_living_room_tv_2_light
+      name: Luz do tv 2
+    - entity: light.lamp_living_room_tv_3_light
+      name: Luz do tv 3
+    - entity: light.lamp_living_room_tv_4_light
+      name: Luz do tv 4 (Lateral)
+    - entity: light.lamp_living_room_tv_5_light
+      name: Luz do tv 5 (Lateral)
+    - type: divider
+    - entity: light.lamp_living_room_door_light
+      name: Luz da porta principal
+    - entity: light.lamp_living_room_kitchen_light
+      name: Luz da porta da cozinha
+    - type: custom:mini-graph-card
+      entities:
+        - sensor.adega_temperature
+      name: Adega
+      hours_to_show: 168
+      points_per_hour: 0.25
+
+
+- type: entities
+  title: Quarto
+  show_header_toggle: false
+  entities:
+    - entity: light.lamp_bedroom_right_light
+      name: Lampada Aurelio
+    - entity: light.lamp_bedroom_left_light
+      name: Lampada Camila
+    - type: custom:mini-graph-card
+      entities:
+        - sensor.temperature_bedroom_temperature
+      name: Temperatura
+      hours_to_show: 168
+      points_per_hour: 0.25
+    - type: custom:mini-graph-card
+      entities:
+        - sensor.temperature_bedroom_humidity
+      name: Humidade
+      hours_to_show: 168
+      points_per_hour: 0.25
+
+- type: entities
+  title: Laboratório
+  show_header_toggle: false
+  entities:
+    - entity: binary_sensor.door_laboratory_contact
+    - entity: switch.lamp_laboratory
+      name: Luz
+    - binary_sensor.motion_laboratory_occupancy
+    - type: custom:mini-graph-card
+      entities:
+        - sensor.motion_laboratory_illuminance
+      name: Nivel de luz
+      hours_to_show: 168
+      points_per_hour: 0.25

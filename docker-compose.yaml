@@ -1,0 +1,57 @@
+version: '3'
+services:
+  homeassistant:
+    container_name: home-assistant
+    image: homeassistant/home-assistant:stable
+    volumes:
+      - /root/homeassistant/config:/config
+    environment:
+      - TZ=Brazil/East
+    restart: on-failure
+    network_mode: host
+    depends_on:
+      - mqtt
+    healthcheck:
+      test: ["CMD", "curl", "-f", "[REDACTED]"]
+      interval: 30s
+      timeout: 10s
+      retries: 6
+  mqtt:
+      container_name: mqtt
+      image: eclipse-mosquitto:latest
+      ports:
+        - "1883:1883"
+        - "9001:9001"
+      restart: on-failure
+      network_mode: host
+      volumes:
+        - /root/homeassistant/mqtt/config:/mosquitto/config
+        - /root/homeassistant/mqtt/data:/mosquitto/data
+        - /root/homeassistant/mqtt/log:/mosquitto/log
+  zigbee2mqtt:
+      container_name: zigbee2mqtt
+      image: koenkk/zigbee2mqtt
+      volumes:
+        - /root/homeassistant/config/zigbee2mqtt:/app/data
+        - /run/udev:/run/udev:ro
+        - /opt/zigbee-herdsman-converters:/app/node_modules/zigbee-herdsman-converters
+        - /opt/homeassistant.js:/app/lib/extension/homeassistant.js
+      devices:
+        - /dev/ttyACM0:/dev/ttyACM0
+      restart: on-failure
+      network_mode: host
+      privileged: true
+      environment:
+        - TZ=Brazil/East
+  esphome:
+    image: esphome/esphome:latest
+    container_name: esphome
+    restart: on-failure
+    network_mode: host
+    ports:
+      - 6052:6052
+      - 6123:6123
+    volumes:
+      - /root/homeassistant/config/esphome:/config
+    environment:
+      - TZ=America/New_York

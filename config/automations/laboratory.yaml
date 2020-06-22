@@ -1,0 +1,73 @@
+- alias: when_laboratory_door_keep_opend
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_laboratory_contact
+      from: 'off'
+      to: 'on'
+      for: '00:01:00'
+
+  action:
+    - service: script.speech_engine
+      data_template:
+        media_player: media_player.echo_dot_laboratorio
+        custom_message: >
+          {{ [
+           "Por favor, mantenha a porta fechada.",
+           "Esse ambiente precisa manter a temperatura estável, por favor feche a porta.",
+           "Foi detectado que a porta está aberta, por favor féche-a."
+           ] | random }}
+        call_no_announcement: 1
+
+- id: turn_on_the_ligth_laboratory_when_detected_motion
+  alias: turn_on_the_ligth_laboratory_when_detected_motion
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_laboratory_occupancy
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: time
+      after: '15:00:00'
+      before: '03:00:00'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.lamp_laboratory
+
+- id: turn_off_the_ligth_laboratory_when_dont_detected_motion
+  alias: turn_off_the_ligth_laboratory_when_dont_detected_motion
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_laboratory_occupancy
+      from: 'on'
+      to: 'off'
+      for: '00:10:00'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.lamp_laboratory
+
+- id: disable_auto_turn_off_the_light_if_door_is_closed
+  alias: disable_auto_turn_off_the_light_if_door_is_closed
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_laboratory_occupancy
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: binary_sensor.door_laboratory_contact
+      state: 'off'
+  action:
+    - service: automation.turn_off
+      entity_id: automation.turn_off_the_ligth_laboratory_when_dont_detected_motion
+
+- id: enable_auto_turn_off_the_light_if_door_is_closed
+  alias: enable_auto_turn_off_the_light_if_door_is_closed
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.door_laboratory_contact
+      from: 'off'
+      to: 'on'
+      for: '00:01:00'
+  action:
+    - service: automation.turn_on
+      entity_id: automation.turn_off_the_ligth_laboratory_when_dont_detected_motion

@@ -1,0 +1,121 @@
+- type: vertical-stack
+  cards:
+    - type: entities
+      entities:
+        - entity: input_select.watt_card
+          name: Select Hours to Show
+    - type: 'custom:config-template-card'
+      variables:
+        - states['input_select.watt_card'].state
+      entities:
+        - input_select.watt_card
+      card:
+        type: custom:mini-graph-card
+        entities:
+          - sensor.washing_machine_power
+        hours_to_show: '${vars[0]}'
+        refresh_interval: 0
+        points_per_hour: 0.1
+- type: entities
+  show_header_toggle: false
+  title: Maquina de lavar roupa
+  entities:
+    - entity: switch.washing_machine_relay
+    - entity: sensor.washing_machine_voltage
+    - entity: sensor.washing_machine_current
+    - entity: sensor.washing_machine_power
+    - type: divider
+    - entity: sensor.washing_machine_total_daily_energy
+      name: Daily Energy
+    - entity: sensor.washing_machine_month_energy_peak
+      name: Month Energy
+    - entity: sensor.washing_machine_year_energy_peak
+      name: Year Energy
+    - type: divider
+    - entity: binary_sensor.washing_machine_end
+    - entity: binary_sensor.washing_machine_centrifughe
+    - entity: binary_sensor.washing_machine_rinse
+    - entity: binary_sensor.washing_machine_drain
+    - entity: binary_sensor.washing_machine_washing
+    - entity: binary_sensor.washing_machine_run
+    - type: divider
+    - type: custom:mini-graph-card
+      entities:
+        - sensor.washing_machine_power
+      name: Wattage
+      hours_to_show: 168
+      points_per_hour: 0.1
+      align_icon: left
+      align_state: center
+      show:
+        fill: false
+      color_thresholds:
+        - value: 20
+          color: "#f39c12"
+        - value: 21
+          color: "#d35400"
+        - value: 21.5
+          color: "#c0392b"
+
+- type: entities
+  show_header_toggle: false
+  title: Cama suite
+  entities:
+    - entity: sensor.bed_occupancy_bed
+    - entity: binary_sensor.bed_occupancy_aurelio_abed
+    - type: custom:mini-graph-card
+      entities:
+        - sensor.bed_occupancy_bed
+      name: Voltage
+      hours_to_show: 168
+      points_per_hour: 0.1
+      align_icon: left
+      align_state: center
+      show:
+        fill: false
+      color_thresholds:
+        - value: 20
+          color: "#f39c12"
+        - value: 21
+          color: "#d35400"
+        - value: 21.5
+          color: "#c0392b"
+
+
+- type: shopping-list
+  title: Shopping List
+
+- type: horizontal-stack
+  cards:
+  - type: sensor
+    name: CPU Temperature
+    icon: mdi:memory
+    entity: sensor.cpu_temperature
+    hours_to_show: 24
+    graph: line
+    detail: 1
+    theme: midnightclear
+  - type: sensor
+    name: Disk use
+    icon: mdi:harddisk
+    entity: sensor.disk_use_percent_home
+    hours_to_show: 24
+    graph: line
+    detail: 1
+    theme: midnightclear
+- type: horizontal-stack
+  cards:
+    - type: sensor
+      entity: sensor.processor_use
+      name: Processor
+      hours_to_show: 24
+      graph: line
+      detail: 1
+      theme: midnightclear
+    - type: sensor
+      entity: sensor.memory_use_percent
+      name: Memory
+      hours_to_show: 24
+      graph: line
+      detail: 1
+      theme: midnightclear

@@ -1,0 +1,51 @@
+substitutions:
+  hostname: "bed_occupancy"
+  ssid_ap: "bed_occupancy"
+  versao: "1.0"
+
+esphome:
+  name: bed_occupancy
+  platform: ESP8266
+  board: nodemcuv2
+  esp8266_restore_from_flash: true
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_pass
+  ap:
+    ssid: "$ssid_ap"
+    password: !secret AP_mode_pass
+
+captive_portal:
+
+logger:
+  baud_rate: 0
+
+# Enable Home Assistant API//
+api:
+
+ota:
+  password: !secret ota_pass
+
+time:
+  - platform: sntp
+    id: my_time
+
+sensor:
+  - platform: adc
+    pin: A0
+    name: "$hostname Bed"
+    unit_of_measurement: v
+    id: valtage_value
+    update_interval: 5s
+
+binary_sensor:
+  - platform: template
+    name: "$hostname aurelio abed"
+    id: abed
+    lambda: |-
+      if (!isnan(id(valtage_value).state) && (id(valtage_value).state) && id(valtage_value).state > 0.2) {
+        return true;
+      } else {
+        return false;
+      }

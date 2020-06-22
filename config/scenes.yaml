@@ -1,0 +1,97 @@
+- name: light_movie_disable
+  icon: mdi:lightbulb-on
+  entities:
+    light.lamps_bedroom: off
+    light.lamps_living_room_sofa: off
+    light.lamps_living_room_window: off
+    light.lamps_living_room_tv_side: off
+    light.lamps_living_room_garden: off
+    light.lamps_living_room_tv:
+      state: on
+      brightness: 60
+      color_temp: 369
+    light.lamp_living_room_kitchen_light:
+      state: on
+      brightness: 60
+      color_temp: 369
+
+- name: light_movie_enable
+  icon: mdi:lightbulb-on
+  entities:
+    light.lamps_bedroom: off
+    light.lamps_living_room_sofa: off
+    light.lamps_living_room_window: off
+    light.lamps_living_room_tv_side: off
+    light.lamp_living_room_kitchen_light: off
+    light.lamps_living_room_garden: off
+    light.lamps_living_room_tv:
+      state: on
+      brightness: 30
+      color_temp: 369
+
+- name: light_sun_set
+  icon: mdi:lightbulb-on
+  entities:
+    light.lamps_bedroom: off
+    light.lamps_living_room_sofa: off
+    light.lamps_living_room_tv_side: off
+    light.lamps_living_room_tv: off
+    light.lamps_living_room_garden: off
+    light.lamps_living_room_window:
+      state: on
+      brightness: 70
+      color_temp: 369
+    light.lamp_living_room_kitchen_light:
+      state: on
+      brightness: 50
+      color_temp: 369
+
+- name: turn_off_the_ligth_going_sleep
+  icon: mdi:lightbulb-on
+  entities:
+    light.lamps_living_room_garden: off
+    light.lamps_living_room_sofa: off
+    light.lamps_living_room_tv_side: off
+    light.lamp_living_room_kitchen_light: off
+    light.lamps_living_room_tv: off
+    light.lamps_living_room_window: off
+
+- name: turn_on_living_room_relex
+  icon: mdi:lightbulb-on
+  entities:
+    light.lamps_living_room_sofa:
+      state: on
+      brightness: 30
+      color_temp: 400
+    light.lamps_living_room_tv_side:
+      state: on
+      brightness: 30
+      color_temp: 400
+    light.lamp_living_room_kitchen_light:
+      state: on
+      brightness: 30
+      color_temp: 400
+    light.lamps_living_room_tv:
+      state: on
+      brightness: 30
+      color_temp: 400
+    light.lamps_living_room_window:
+      state: on
+      brightness: 30
+      color_temp: 400
+    light.lamps_living_room_garden:
+      state: on
+      brightness: 30
+      color_temp: 400
+
+- name: turn_on_motion_bedroom
+  icon: mdi:lightbulb-on
+  entities:
+    light.lamp_bedroom_left_light:
+      state: on
+      color_temp: 454
+      brightness: 76
+    light.lamp_bedroom_right_light:
+      state: on
+      color_temp: 454
+      brightness: 76

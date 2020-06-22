@@ -1,0 +1,41 @@
+{
+  "devices": "devices.yaml",
+  "groups": "groups.yaml",
+  "homeassistant": true,
+  "permit_join": true,
+  "mqtt": {
+    "base_topic": "zigbee2mqtt",
+    "server": "mqtt://homeassistant",
+    "user": "aureliosaraiva_mqtt",
+    "password": "Z4vMkyltu"
+  },
+  "serial": {
+    "port": "/dev/ttyACM0"
+  },
+  "advanced": {
+    "pan_id": 6754,
+    "channel": 19,
+    "network_key": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      13
+    ],
+    "availability_blacklist": []
+  },
+  "ban": [],
+  "whitelist": [],
+  "queue": {}
+}

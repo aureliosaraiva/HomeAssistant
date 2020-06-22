@@ -1,0 +1,23 @@
+- type: entities
+  title: Entreternimento
+  show_header_toggle: false
+  entities:
+    - sensor.tv_living_room
+    - switch.tv_living_room
+    - entity: scene.light_movie_enable
+      name: Luzes ambiente (Filmes)
+    - switch.tv_living_room_2
+    - switch.tv_bedroom
+
+- type: custom:mini-media-player
+  entity: media_player.cast_living_room
+  artwork: cover
+
+- type: custom:mini-media-player
+  entity: media_player.gh_mini
+- type: custom:mini-media-player
+  entity: media_player.gh_view
+
+- type: custom:mini-media-player
+  entity: media_player.amazon_fire_tv
+  artwork: cover

@@ -1,0 +1,88 @@
+- alias: unavailable_device
+  trigger:
+    - platform: state
+      entity_id:
+          - sensor.door_garden_linkquality
+          - sensor.door_kitchen_linkquality
+          - sensor.door_laboratory_linkquality
+          - sensor.door_main_linkquality
+          - sensor.door_bathroom_social_linkquality
+          - sensor.door_laundry_linkquality
+          - sensor.motion_external_door_linkquality
+          - sensor.motion_garden_linkquality
+          - sensor.motion_kitchen_linkquality
+          - sensor.motion_laboratory_linkquality
+          - sensor.motion_bedroom_linkquality
+          - sensor.motion_garden_laundry_linkquality
+          - sensor.motion_office_linkquality
+          - sensor.motion_stair_linkquality
+          - sensor.temperature_bedroom_linkquality
+          - sensor.temperature_bathroom_linkquality
+          - sensor.temperature_laboratory_linkquality
+          - sensor.temperature_livingroom_linkquality
+          - sensor.temperature_office_linkquality
+          - sensor.lux_living_room_linkquality
+          - sensor.adega_linkquality
+      to: 'unavailable'
+      for:
+        seconds: 5
+  action:
+    - service: notify.AURELIO
+      data_template:
+        message: >
+          Device offline: {{trigger.entity_id}}
+    - service: script.speech_engine
+      data_template:
+        media_player: media_player.echo_dot_laboratorio
+        custom_message: >
+          {{ [
+           "Identifiquei que alguns sensores estão desligados. Te enviei a lista pelo Telegram.",
+           "Você poderia verificar alguns sensores para mim? Não estou conseguindo me conectar a alguns deles. Te enviei a lista pelo Telegram.",
+           "Te enviei uma lista de sensores desligados pelo Telegram."
+           ] | random }}
+
+- alias: Restart HA
+  trigger:
+    platform: time
+    at: "02:00:00"
+  condition:
+    condition: time
+    weekday:
+    - sun
+    - wed
+    - fri
+  action:
+    - service: notify.AURELIO
+      data:
+        message: 'Auto-Reboot HomeAssistan'
+    - service: homeassistant.restart
+
+- alias: Home Assistant Started
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - service: script.speech_engine
+      data_template:
+        media_player: media_player.echo_dot_laboratorio
+        custom_message: >
+          {{ [
+           "Parece que voltei a vida. Vou monitorar a casa.",
+           "Finalmente meus sistemas estão on-line novamente.",
+           "Estou iniciando meus sistemas. Só um momento."
+           ] | random }}
+
+- alias: Home Assistant Shutdown
+  trigger:
+    platform: homeassistant
+    event: shutdown
+  action:
+    - service: script.speech_engine
+      data_template:
+        media_player: media_player.echo_dot_laboratorio
+        custom_message: >
+          {{ [
+           "Só um momento, preciso reiniciar meus sistemas.",
+           "Só um momento, preciso reiniciar meus sensores.",
+           "Solicitaram que eu reiniar, só um momento, já voltou."
+           ] | random }}
