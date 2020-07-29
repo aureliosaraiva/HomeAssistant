@@ -16,7 +16,11 @@ wifi:
     ssid: "$ssid_ap"
     password: !secret AP_mode_pass
 
+# mqtt:
+  # broker: 192.168.68.109
+
 captive_portal:
+
 
 logger:
   baud_rate: 0
@@ -31,20 +35,66 @@ time:
   - platform: sntp
     id: my_time
 
+i2c:
+  sda: D1
+  scl: D2
+  scan: True
+
+ads1115:
+  - address: 0x48
+
 sensor:
-  - platform: adc
-    pin: A0
-    name: "$hostname Bed"
-    unit_of_measurement: v
-    id: valtage_value
-    update_interval: 5s
+  - platform: ads1115
+    multiplexer: 'A1_GND'
+    gain: 6.144
+    id: bed_right
+    update_interval: 2s
+    accuracy_decimals: 5
+    name: "$hostname volt right"
+    filters:
+      - multiply: 1.2
+      - lambda: |-
+          if (!isnan(x) && x>0) {
+            return x;
+          } else {
+            return 0;
+          }
+
+  - platform: ads1115
+    multiplexer: 'A3_GND'
+    gain: 6.144
+    id: bed_left
+    update_interval: 2s
+    accuracy_decimals: 5
+    name: "$hostname volt left"
+    filters:
+      - multiply: 1.2
+      - lambda: |-
+          if (!isnan(x) && x>0) {
+            return x;
+          } else {
+            return 0;
+          }
 
 binary_sensor:
   - platform: template
-    name: "$hostname aurelio abed"
-    id: abed
+    name: "$hostname right"
+    filters:
+      - delayed_on: 4s
+      - delayed_off: 4s
     lambda: |-
-      if (!isnan(id(valtage_value).state) && (id(valtage_value).state) && id(valtage_value).state > 0.2) {
+      if (!isnan(id(bed_right).state) && (id(bed_right).state) && id(bed_right).state > 0.001) {
+        return true;
+      } else {
+        return false;
+      }
+  - platform: template
+    name: "$hostname left"
+    filters:
+      - delayed_on: 4s
+      - delayed_off: 4s
+    lambda: |-
+      if (!isnan(id(bed_left).state) && (id(bed_left).state) && id(bed_left).state > 0.001) {
         return true;
       } else {
         return false;

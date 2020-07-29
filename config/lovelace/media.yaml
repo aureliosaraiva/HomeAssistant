@@ -1,4 +1,19 @@
 - type: entities
+  title: Broadcast
+  show_header_toggle: false
+  entities:
+  - entity: input_text.text1
+    name: Alexa Broadcast
+    type: 'custom:text-input-row'
+  - entity: input_select.message_target
+    name: Select Alexa Device
+  - action_name: Execute...
+    icon: 'mdi:voice'
+    name: ' '
+    service: script.instant_message
+    type: call-service
+
+- type: entities
   title: Entreternimento
   show_header_toggle: false
   entities:

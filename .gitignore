@@ -13,3 +13,4 @@ tts
 ._.DS_Store
 *.pickle
 zigbee2mqtt
+*.pyc

@@ -1,0 +1,35 @@
+- alias: when_3d_print_run
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.3d_print_run
+      to: 'on'
+  action:
+    - service: script.speech_engine
+      data_template:
+        media_player:
+          - media_player.alexa_laboratory
+        custom_message: >
+          {{ [
+           "Vou iniciar a impressão 3d agora.",
+           "Estou iniciando a impressão agora.",
+           "Detectei que a impressora 3d foi ligada."
+           ] | random }}
+        call_no_announcement: 1
+        call_no_random: 1
+
+- alias: when_3d_print_end
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.3d_print_end
+      to: 'on'
+  action:
+    - service: script.speech_engine
+      data_template:
+        media_player:
+          - media_player.alexa_laboratory
+        custom_message: >
+          {{ [
+           "Parece que a impressora 3D terminou."
+           ] | random }}
+        call_no_announcement: 1
+        call_no_random: 1

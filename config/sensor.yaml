@@ -29,6 +29,11 @@
   name: Bridge state
   state_topic: "zigbee2mqtt/bridge/state"
   icon: mdi:router-wireless
+# - platform: sql
+#     queries:
+#       - name: Total de entidades
+#         query: "select count(distinct entity_id) as total from states"
+#         column: 'total'
 - platform: template
   sensors:
     tv_living_room_movie:
@@ -96,6 +101,11 @@
       entity_id: []
       friendly_name: 'Zwave Devices'
       value_template: '{{ states.zwave_count | count }}'
+
+    camera_count:
+      entity_id: []
+      friendly_name: 'Zwave Devices'
+      value_template: '{{ states.camera | count }}'
 
     media_player_count:
       entity_id: []

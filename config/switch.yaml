@@ -41,3 +41,7 @@
   name: Luzes Quarto (Circadian)
   lights_ct:
     - light.lamps_bedroom
+- platform: circadian_lighting
+  name: Luzes Sala (Circadian)
+  lights_ct:
+    - light.lamps_living_room

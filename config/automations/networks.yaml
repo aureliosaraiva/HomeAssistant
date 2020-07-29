@@ -7,9 +7,9 @@
     platform: event
   condition: []
   action:
-    - service: script.speech_engine      
+    - service: script.speech_engine
       data_template:
-        media_player: media_player.echo_dot_laboratorio
+        media_player: media_player.alexa_laboratory
         custom_message: >
           {{ [
            "Foi detectado um novo dispositivo na rede.",

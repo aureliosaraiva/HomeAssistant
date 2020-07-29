@@ -13,5 +13,5 @@
   action:
     - service: script.speech_engine
       data_template:
-        media_player: media_player.echo_dot_cozinha
+        media_player: media_player.alexa_kitchen
         call_no_announcement: 0

@@ -12,3 +12,29 @@
   action:
     - service: scene.turn_on
       entity_id: scene.turn_on_motion_bedroom
+
+- alias: when_famaly_is_in_bed
+  trigger:
+    - platform: state
+      entity_id: group.bed_family
+      from: 'off'
+      to: 'on'
+      for: '00:02:00'
+  action:
+    - service: script.speech_engine
+      data_template:
+        media_player:
+          - media_player.alexa_bedroom
+        custom_message: >
+          {{ [
+           "Meus sensores informaram que todos estão na cama. Vou colocar a casa em modo noturno."
+           ] | random }}
+        call_no_announcement: 1
+        call_no_random: 1
+    - service: light.turn_off
+      entity_id: light.lamps_living_room
+    - service: switch.turn_off
+      entity_id:
+        - switch.lamp_kiosk_switch
+        - switch.lamp_laboratory
+        - switch.lamp_laboratory_switch

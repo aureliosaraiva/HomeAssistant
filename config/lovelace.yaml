@@ -6,3 +6,5 @@ resources:
     type: module
   - url: /local/community/config-template-card/config-template-card.js?v=1.1.2
     type: module
+  - url: /local/community/lovelace-text-input-row/lovelace-text-input-row.js?v=0.0.8
+    type: js

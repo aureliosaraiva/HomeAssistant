@@ -13,7 +13,7 @@
     - service: notify.alexa_media
       data:
         target:
-          - media_player.echo_dot_de_aurelio
+          - media_player.alexa_living_room
         data:
           type: announce
         message: >

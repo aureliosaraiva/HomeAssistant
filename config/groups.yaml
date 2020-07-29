@@ -2,6 +2,13 @@ family:
   entities:
     - device_tracker.life360_aurelio_saraiva
 
+bed_family:
+  all: true
+  icon: "mdi:bed-empty"
+  name: Todos na cama
+  entities:
+    - binary_sensor.bed_occupancy_left
+    - binary_sensor.bed_occupancy_right
 
 external_doors:
   entities:

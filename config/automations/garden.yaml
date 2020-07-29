@@ -24,7 +24,9 @@
   alias: turn_on_the_ligth_garden_when_detected_motion
   trigger:
     - platform: state
-      entity_id: binary_sensor.motion_garden_occupancy
+      entity_id:
+        - binary_sensor.motion_garden_occupancy
+        - binary_sensor.motion_garden_laundry_occupancy
       from: 'off'
       to: 'on'
   condition:

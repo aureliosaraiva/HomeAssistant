@@ -13,7 +13,7 @@
       continue_on_timeout: false
     - service: script.speech_engine
       data_template:
-        media_player: media_player.echo_de_aurelio
+        media_player: media_player.alexa_living_room
         custom_message: >
           {% set person = state_attr(trigger.entity_id, "friendly_name")%}
           {%- macro greeting_sentence(person) -%}

@@ -1,3 +1,12 @@
+- type: entities
+  show_header_toggle: false
+  title: Impressora 3D
+  entities:
+    - sensor.3d_print_current
+    - sensor.3d_print_power
+    - sensor.3d_print_total_daily_energy
+    - sensor.3d_print_voltage
+
 - type: vertical-stack
   cards:
     - type: entities
@@ -61,25 +70,16 @@
   show_header_toggle: false
   title: Cama suite
   entities:
-    - entity: sensor.bed_occupancy_bed
-    - entity: binary_sensor.bed_occupancy_aurelio_abed
-    - type: custom:mini-graph-card
-      entities:
-        - sensor.bed_occupancy_bed
-      name: Voltage
-      hours_to_show: 168
-      points_per_hour: 0.1
-      align_icon: left
-      align_state: center
-      show:
-        fill: false
-      color_thresholds:
-        - value: 20
-          color: "#f39c12"
-        - value: 21
-          color: "#d35400"
-        - value: 21.5
-          color: "#c0392b"
+    - entity: sensor.bed_occupancy_volt_left
+      name: Resistência (left)
+    - entity: sensor.bed_occupancy_volt_right
+      name: Resistência (right)
+    - entity: binary_sensor.bed_occupancy_left
+      name: Lado direito (Camila)
+    - entity: binary_sensor.bed_occupancy_right
+      name: Lado esquerdo (Aurélio)
+    - group.bed_family
+
 
 
 - type: shopping-list

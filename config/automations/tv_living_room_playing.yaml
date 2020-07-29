@@ -13,7 +13,7 @@
     - service: script.speech_engine
       data_template:
         media_player:
-          - media_player.echo_de_aurelio
+          - media_player.alexa_living_room
         custom_message: >
           {{ [
            "Modo filme ativado. Vou ajustar as luzes.",

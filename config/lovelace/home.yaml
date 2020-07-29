@@ -1,4 +1,97 @@
 - type: picture-elements
+  image: /local/floorplans/main_2.jpg
+  elements:
+    - type: state-icon
+      entity: binary_sensor.motion_bedroom_occupancy
+      style:
+        top: 45%
+        left: 65%
+    - type: state-label
+      entity: sensor.temperature_bedroom_temperature
+      style:
+        top: 45%
+        left: 80%
+        color: "#000"
+        border-radius: 50%
+        text-align: center
+        background-color: "rgba(255, 255, 255, 0.3)"
+        font-size: 11px
+        font-weight: bold
+    - type: state-label
+      entity: sensor.temperature_bathroom_temperature
+      style:
+        top: 28%
+        left: 50%
+        color: "#000"
+        border-radius: 50%
+        text-align: center
+        background-color: "rgba(255, 255, 255, 0.3)"
+        font-size: 11px
+        font-weight: bold
+    - type: state-icon
+      entity: light.lamp_bedroom_left_light
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+      style:
+        top: 43%
+        left: 93%
+    - type: state-icon
+      entity: light.lamp_bedroom_right_light
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+      style:
+        top: 27%
+        left: 93%
+    - type: state-icon
+      entity: binary_sensor.motion_stair_occupancy
+      style:
+        top: 60%
+        left: 90%
+
+    - type: state-label
+      entity: sensor.motion_stair_illuminance
+      style:
+        top: 60%
+        left: 80%
+        color: "#000"
+        border-radius: 50%
+        text-align: center
+        background-color: "rgba(255, 255, 255, 0.3)"
+        font-size: 11px
+        font-weight: bold
+
+    - type: state-icon
+      entity: binary_sensor.motion_office_occupancy
+      style:
+        top: 70%
+        left: 70%
+    - type: state-label
+      entity: sensor.temperature_office_temperature
+      style:
+        top: 80%
+        left: 70%
+        color: "#000"
+        border-radius: 50%
+        text-align: center
+        background-color: "rgba(255, 255, 255, 0.3)"
+        font-size: 11px
+        font-weight: bold
+    - type: state-icon
+      entity: switch.switch_office_top
+      icon: mdi:lightbulb-on
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+      style:
+        top: 80%
+        left: 80%
+
+- type: picture-elements
   image: /local/floorplans/main.jpg
   elements:
     - type: state-icon
@@ -263,6 +356,11 @@
       style:
         top: 90%
         left: 10%
+    - type: state-icon
+      entity: binary_sensor.leak_kiosk_water_leak
+      style:
+        top: 90%
+        left: 15%
 
     - type: state-label
       entity: sensor.motion_garden_temperature
@@ -343,6 +441,3 @@
         background-color: "rgba(255, 255, 255, 0.3)"
         font-size: 11px
         font-weight: bold
-
-- entity: weather.casa_da_lara_mia
-  type: weather-forecast

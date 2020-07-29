@@ -260,3 +260,19 @@
           font_size: 75
           hours_to_show: 24
           points_per_hour: 2
+
+- type: vertical-stack
+  title: Adega
+  show_header_toggle: false
+  cards:
+    - type: horizontal-stack
+      cards:
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.adega_temperature
+              name: Temperatura
+          line_color: orange
+          line_width: 4
+          font_size: 75
+          hours_to_show: 24
+          points_per_hour: 2

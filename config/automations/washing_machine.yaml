@@ -7,7 +7,7 @@
     - service: script.speech_engine
       data_template:
         media_player:
-          - media_player.echo_dot_cozinha
+          - media_player.alexa_kitchen
         custom_message: >
           {{ [
            "<emphasis level=\"moderate\">Oba</emphasis>, parece que vamos lavar roupas. <break time=\"1s\" />Adoro o cheiro de roupa limpa.",
@@ -29,8 +29,8 @@
 #     - service: script.speech_engine
 #       data_template:
 #         media_player:
-#           - media_player.echo_dot_laboratorio
-#- media_player.echo_dot_cozinha
+#           - media_player.alexa_laboratory
+#- media_player.alexa_kitchen
 #         custom_message: >
 #           {{ [
 #            "A máquina de lavar roupas iniciou a lavagem."
@@ -48,7 +48,7 @@
 #     - service: script.speech_engine
 #       data_template:
 #         media_player:
-#           - media_player.echo_dot_laboratorio
+#           - media_player.alexa_laboratory
 #         custom_message: >
 #           {{ [
 #            "A máquina de lavar roupas está drenando a água."
@@ -64,7 +64,7 @@
     - service: script.speech_engine
       data_template:
         media_player:
-          - media_player.echo_dot_cozinha
+          - media_player.alexa_kitchen
         custom_message: >
           {{ [
            "Detectei que a máquina de lavar roupas vai começar a enxaguar.",
@@ -94,7 +94,7 @@
 #     - service: script.speech_engine
 #       data_template:
 #         media_player:
-#           - media_player.echo_dot_laboratorio
+#           - media_player.alexa_laboratory
 #         custom_message: >
 #           {{ [
 #            "A máquina de lavar roupas vai começou a centrifugar."
@@ -110,7 +110,7 @@
     - service: script.speech_engine
       data_template:
         media_player:
-          - media_player.echo_dot_cozinha
+          - media_player.alexa_kitchen
         custom_message: >
           {{ [
            "Detectei que a máquina de lavar roupas terminou de lavar.",

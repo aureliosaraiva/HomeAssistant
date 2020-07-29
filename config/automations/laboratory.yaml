@@ -9,7 +9,7 @@
   action:
     - service: script.speech_engine
       data_template:
-        media_player: media_player.echo_dot_laboratorio
+        media_player: media_player.alexa_laboratory
         custom_message: >
           {{ [
            "Por favor, mantenha a porta fechada.",
@@ -71,3 +71,14 @@
   action:
     - service: automation.turn_on
       entity_id: automation.turn_off_the_ligth_laboratory_when_dont_detected_motion
+
+- id: enable_light_table
+  alias: enable_light_table
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.switch_two_gang_01_touch_1
+      from: 'off'
+      to: 'on'
+  action:
+    - service: switch.toggle
+      entity_id: switch.lamp_laboratory_switch

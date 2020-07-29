@@ -7,7 +7,7 @@
       name: Multimidia
     - entity: sensor.tracker_count
       icon: mdi:cellphone-link
-      name: Número de Devices
+      name: Total de Tracker
     - entity: sensor.lights_count
       icon: mdi:lightbulb
     - entity: sensor.binary_sensor_count

@@ -33,7 +33,7 @@
           Device offline: {{trigger.entity_id}}
     - service: script.speech_engine
       data_template:
-        media_player: media_player.echo_dot_laboratorio
+        media_player: media_player.alexa_laboratory
         custom_message: >
           {{ [
            "Identifiquei que alguns sensores estão desligados. Te enviei a lista pelo Telegram.",
@@ -64,7 +64,7 @@
   action:
     - service: script.speech_engine
       data_template:
-        media_player: media_player.echo_dot_laboratorio
+        media_player: media_player.alexa_laboratory
         custom_message: >
           {{ [
            "Parece que voltei a vida. Vou monitorar a casa.",
@@ -79,7 +79,7 @@
   action:
     - service: script.speech_engine
       data_template:
-        media_player: media_player.echo_dot_laboratorio
+        media_player: media_player.alexa_laboratory
         custom_message: >
           {{ [
            "Só um momento, preciso reiniciar meus sistemas.",

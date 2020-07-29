@@ -63,6 +63,7 @@ cloud:
         - light.lamps_living_room_window
         - sensor.temperature_bedroom_temperature
         - switch.lamp_laboratory
+        - switch.lamp_laboratory_switch
     entity_config:
       light.lamps_bedroom:
         name: Luzes do quarto
@@ -96,6 +97,11 @@ cloud:
         name: Luz do laboratório
         description: Luz do laboratório
         display_categories: LIGHT
+      switch.lamp_laboratory_switch:
+        name: Luminária
+        description: Luminária
+        display_categories: LIGHT
+
 
 
 
@@ -171,7 +177,24 @@ timer:
     name: Tempo restante
     duration: 600
 
+input_text:
+  text1:
+    name: manual_message
+    initial: 'Enter your text here'
+
 input_select:
+  message_target:
+    name: 'My broadcast message'
+    options:
+      - "media_player.alexa_kitchen"
+      - "media_player.alexa_living_room"
+      - "media_player.alexa_laboratory"
+      - "media_player.alexa_office"
+      - "media_player.alexa_bedroom"
+      - "media_player.alexa_garden"
+      - "media_player.todo_lugar"
+    initial: "media_player.alexa_living_room"
+    icon: mdi:speaker-wireless
   watt_card:
     name: Watt Hours
     options:
@@ -184,7 +207,6 @@ input_select:
       - 72
     initial: 24
     icon: mdi:flash
-
 
 utility_meter:
   washing_machine_year_energy:

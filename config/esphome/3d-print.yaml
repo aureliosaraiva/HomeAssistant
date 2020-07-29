@@ -49,6 +49,44 @@ binary_sensor:
     on_press:
       - switch.toggle: relay
 
+  - platform: template
+    name: "$hostname RUN"
+    id: print_running
+    filters:
+      - delayed_on: 5s # MINIMUM TIME TO AVOID FALSE POSITIVES
+      - delayed_off: 120s
+    lambda: |-
+      if (isnan(id(power).state)) {
+        return {};
+      } else if ( id(power).state > 30 ){
+        // Running
+        return true;
+      } else {
+        return false;
+      }
+    on_press:
+      then: # at cycle start i reset all binary sensors
+        - lambda: |-
+            {
+              id(print_end).publish_state(false);
+            }
+        - light.turn_on: led
+
+  - platform: template
+    name: "$hostname END"
+    id: print_end
+    lambda: |-
+      if (isnan(id(power).state)) {
+        return {};
+      } else if ( id(print_running).state && id(power).state < 30 ){
+        // Running
+        return true;
+      } else {
+        // Not running (le due graffe significa che non fa nulla)
+        return {};
+      }
+    on_press:
+      - light.turn_off: led
 
 switch:
   - platform: gpio
