@@ -1,0 +1,16 @@
+- id: '1605561153288'
+  alias: test-aure
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.0xbc33acfffe616a3c_action
+    to: 4_button
+  condition: []
+  action:
+  - service: switch.toggle
+    entity_id: switch.lamp_laboratory_switch
+  - type: toggle
+    device_id: dcb304e9845c4aa9a36b978ecb90a6e6
+    entity_id: switch.lamp_laboratory_switch
+    domain: switch
+  mode: single

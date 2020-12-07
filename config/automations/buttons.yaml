@@ -1,0 +1,40 @@
+- id: button_1_single
+  alias: button_1_single
+  trigger:
+    - platform: state
+      entity_id: sensor.0xbc33acfffe616a3c_action
+      to: '1_single'
+  action:
+    - service: light.toggle
+      entity_id: light.lamps_living_room_sofa
+
+- id: button_2_single
+  alias: button_2_single
+  trigger:
+    - platform: state
+      entity_id: sensor.0xbc33acfffe616a3c_action
+      to: '2_single'
+  action:
+    - service: light.toggle
+      entity_id: light.lamps_living_room_tv
+
+- id: button_3_single
+  alias: button_3_single
+  trigger:
+    - platform: state
+      entity_id: sensor.0xbc33acfffe616a3c_action
+      to: '3_single'
+  action:
+    - service: light.toggle
+      entity_id: light.lamps_living_room_window
+
+
+- id: button_4_single
+  alias: button_4_single
+  trigger:
+    - platform: state
+      entity_id: sensor.0xbc33acfffe616a3c_action
+      to: '4_single'
+  action:
+    - service: light.toggle
+      entity_id: light.lamps_living_room

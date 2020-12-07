@@ -34,8 +34,6 @@ services:
       volumes:
         - /root/homeassistant/config/zigbee2mqtt:/app/data
         - /run/udev:/run/udev:ro
-        - /opt/zigbee-herdsman-converters:/app/node_modules/zigbee-herdsman-converters
-        - /opt/homeassistant.js:/app/lib/extension/homeassistant.js
       devices:
         - /dev/ttyACM0:/dev/ttyACM0
       restart: on-failure

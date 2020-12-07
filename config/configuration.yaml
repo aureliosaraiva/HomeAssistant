@@ -35,6 +35,12 @@ panel_iframe:
     url: 'http://192.168.68.109:6052/'
     icon: 'mdi:memory'
 
+panel_custom:
+  - name: floorplan
+    sidebar_title: Floorplan
+    sidebar_icon: mdi:home
+    url_path: floorplan
+    config: !include floorplan.yaml
 
 homeassistant:
   customize: !include customize.yaml

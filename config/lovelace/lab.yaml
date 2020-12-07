@@ -1,3 +1,29 @@
+- type: picture-entity
+  aspect_ratio: 92%
+  camera_view: live
+  entity: camera.iss
+  name: Camara Frente2
+  show_name: true
+  show_state: false
+- type: picture-entity
+  aspect_ratio: 92%
+  camera_view: live
+  entity: camera.esp_cam02
+  name: Camara Frente
+  show_name: true
+  show_state: false
+
+- type: picture
+  image: http://192.168.68.127/
+  tap_action:
+    action: none
+  hold_action:
+    action: none
+- type: picture-glance
+  title: espcamtest
+  entities:
+    - light.esp32cam_light
+  camera_image: camera.esp_cam02
 - type: entities
   show_header_toggle: false
   title: Impressora 3D
